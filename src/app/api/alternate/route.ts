@@ -98,16 +98,27 @@ ${userPrompt}`;
     const parsed = JSON.parse(jsonText) as { answer: string; comparison: string };
     if (parsed.answer) {
       return {
-        answer: parsed.answer.trim(),
+        answer: parsed.answer.trim().replace(/\\n/g, "\n"),
         comparison: parsed.comparison ? parsed.comparison.trim() : "Pivoted strategy compared to the previous version.",
       };
     }
   } catch (e) {
-    // Fallback if parsing fails
+    // JSON.parse failed — try regex extraction as fallback
+    const answerMatch = jsonText.match(/"answer"\s*:\s*"((?:[^"\\]|\\.)*)"/);
+    const compMatch = jsonText.match(/"comparison"\s*:\s*"((?:[^"\\]|\\.)*)"/);
+    if (answerMatch?.[1]) {
+      return {
+        answer: answerMatch[1].replace(/\\n/g, "\n").replace(/\\"/g, '"').trim(),
+        comparison: compMatch?.[1]
+          ? compMatch[1].replace(/\\n/g, "\n").replace(/\\"/g, '"').trim()
+          : "Pivoted strategy compared to the previous version.",
+      };
+    }
   }
 
+  // Last resort: return the raw content but clean up escaped newlines
   return {
-    answer: content,
+    answer: content.replace(/\\n/g, "\n"),
     comparison: "Pivoted strategy compared to the previous version.",
   };
 }
