@@ -55,12 +55,6 @@ async function requestEvaluatorsFromApi(
 export async function runEvaluators(
   params: RunEvaluatorsParams
 ): Promise<RunEvaluatorsResult> {
-  if (!isLiveEvaluatorsEnabled()) {
-    const results = await fetchMockEvaluationResults(params.evaluatorTypes);
-    clientDevLog("client evaluator source: mock (live flag off)");
-    return { results, source: "mock" };
-  }
-
   try {
     const result = await requestEvaluatorsFromApi(params);
     clientDevLog(`client evaluator source: ${result.source}`);

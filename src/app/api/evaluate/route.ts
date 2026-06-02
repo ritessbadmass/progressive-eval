@@ -38,7 +38,7 @@ function isNvidiaConfigured(): boolean {
 }
 
 function shouldAttemptLiveCall(): boolean {
-  return isLiveEvaluatorsEnabled() && isNvidiaConfigured();
+  return isNvidiaConfigured();
 }
 
 function getEvaluatorModel(): string {

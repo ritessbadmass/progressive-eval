@@ -45,12 +45,6 @@ async function requestAnswerFromApi(
 export async function generateAnswer(
   prompt: string
 ): Promise<GenerateAnswerResult> {
-  if (!isLiveAnswerEnabled()) {
-    const answer = await fetchMockAnswer(prompt);
-    clientDevLog("client answer source: mock (live flag off)");
-    return { answer, source: "mock" };
-  }
-
   try {
     const result = await requestAnswerFromApi(prompt);
     clientDevLog(`client answer source: ${result.source}`);

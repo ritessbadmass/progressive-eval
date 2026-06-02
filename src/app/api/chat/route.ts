@@ -17,7 +17,7 @@ function isNvidiaConfigured(): boolean {
 }
 
 function shouldAttemptLiveCall(): boolean {
-  return isLiveAnswerEnabled() && isNvidiaConfigured();
+  return isNvidiaConfigured();
 }
 
 function getAnswerModel(): string {
