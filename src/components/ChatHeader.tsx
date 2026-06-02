@@ -26,17 +26,8 @@ export function ChatHeader() {
       {/* Empty Left Box to balance flex layout */}
       <div className="w-9" />
 
-      {/* Center Group - Free Plan & Upgrade Indicator */}
-      <div className="flex items-center gap-1.5 rounded-full bg-claude-surface px-3.5 py-1 text-xs font-medium text-claude-muted border border-claude-border">
-        <span>Free plan</span>
-        <span className="opacity-40">•</span>
-        <button
-          type="button"
-          className="text-claude-text underline underline-offset-2 hover:text-claude-accent font-medium cursor-pointer"
-        >
-          Upgrade
-        </button>
-      </div>
+      {/* Center Spacer */}
+      <div />
 
       {/* Right Group - Theme Toggle & Profile Icon */}
       <div className="flex items-center gap-1.5">

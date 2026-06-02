@@ -10,6 +10,7 @@ interface AnswerCardProps {
   answer: AnswerState;
   modelLabel?: string;
   className?: string;
+  hideLabel?: boolean;
 }
 
 function renderInline(text: string) {
@@ -106,6 +107,7 @@ export function AnswerCard({
   answer,
   modelLabel = "Llama 3.1 8B",
   className,
+  hideLabel = false,
 }: AnswerCardProps) {
   const label = answer.label ?? variantLabels[answer.variant];
   const showSource =
@@ -123,20 +125,22 @@ export function AnswerCard({
     >
       <ClaudeAvatar />
       <div className="min-w-0 flex-1">
-        <div className="mb-1 flex flex-wrap items-center gap-2">
-          <span className="text-sm font-medium text-claude-text">{label}</span>
-          <span className="text-xs text-claude-muted">{modelLabel}</span>
-          {answer.variant !== "initial" && (
-            <span className="rounded-full bg-claude-surface-2 px-2 py-0.5 text-[11px] text-claude-muted border border-claude-border">
-              Updated
-            </span>
-          )}
-          {showSource && (
-            <span className="text-[11px] text-claude-muted">
-              · {answer.source === "live" ? "Live" : "Mock"}
-            </span>
-          )}
-        </div>
+        {!hideLabel && (
+          <div className="mb-1 flex flex-wrap items-center gap-2">
+            <span className="text-sm font-medium text-claude-text">{label}</span>
+            <span className="text-xs text-claude-muted">{modelLabel}</span>
+            {answer.variant !== "initial" && (
+              <span className="rounded-full bg-claude-surface-2 px-2 py-0.5 text-[11px] text-claude-muted border border-claude-border">
+                Updated
+              </span>
+            )}
+            {showSource && (
+              <span className="text-[11px] text-claude-muted">
+                · {answer.source === "live" ? "Live" : "Mock"}
+              </span>
+            )}
+          </div>
+        )}
         {answer.isLoading ? (
           <TypingIndicator />
         ) : (

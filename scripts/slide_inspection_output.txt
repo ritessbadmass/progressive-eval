@@ -1,0 +1,520 @@
+Total Slides: 10
+
+--- Slide 1 ---
+Title: No Title
+  Shape 0: Name=Shape 0, Type=AUTO_SHAPE (1), Text=
+  Shape 1: Name=Text 1, Type=AUTO_SHAPE (1), Text=AI outputs look polished and complete — but users have no way to tell when they're actually good enough
+  Shape 2: Name=Shape 2, Type=AUTO_SHAPE (1), Text=
+  Shape 3: Name=Shape 3, Type=AUTO_SHAPE (1), Text=
+  Shape 4: Name=Text 4, Type=AUTO_SHAPE (1), Text=⚡
+  Shape 5: Name=Text 5, Type=AUTO_SHAPE (1), Text=Speed creates blind spots
+  Shape 6: Name=Text 6, Type=AUTO_SHAPE (1), Text=AI responds in seconds. Professionals under pressure take the output at face value — only to discover errors downstream 
+  Shape 7: Name=Shape 7, Type=AUTO_SHAPE (1), Text=
+  Shape 8: Name=Shape 8, Type=AUTO_SHAPE (1), Text=
+  Shape 9: Name=Text 9, Type=AUTO_SHAPE (1), Text=✨
+  Shape 10: Name=Text 10, Type=AUTO_SHAPE (1), Text=Polish masks weak reasoning
+  Shape 11: Name=Text 11, Type=AUTO_SHAPE (1), Text=Fluent, well-formatted answers are harder to challenge. Users mistake confident tone for correctness — even when logic i
+  Shape 12: Name=Shape 12, Type=AUTO_SHAPE (1), Text=
+  Shape 13: Name=Shape 13, Type=AUTO_SHAPE (1), Text=
+  Shape 14: Name=Text 14, Type=AUTO_SHAPE (1), Text=🔀
+  Shape 15: Name=Text 15, Type=AUTO_SHAPE (1), Text=Evaluation is entirely ad-hoc
+  Shape 16: Name=Text 16, Type=AUTO_SHAPE (1), Text=Users rely on gut feel, re-posting to multiple AIs, or asking colleagues. Slow, inconsistent, and doesn't scale to high-
+  Shape 17: Name=Shape 17, Type=AUTO_SHAPE (1), Text=
+  Shape 18: Name=Text 18, Type=AUTO_SHAPE (1), Text=THE TRUST GAP
+  Shape 19: Name=Text 19, Type=AUTO_SHAPE (1), Text=WHAT AI PRESENTS
+  Shape 20: Name=Text 20, Type=AUTO_SHAPE (1), Text=→  Polished tone & confident phrasing
+  Shape 21: Name=Text 21, Type=AUTO_SHAPE (1), Text=→  Structured, complete-looking format
+  Shape 22: Name=Text 22, Type=AUTO_SHAPE (1), Text=→  Fast, frictionless response
+  Shape 23: Name=Text 23, Type=AUTO_SHAPE (1), Text=WHAT USERS EXPERIENCE
+  Shape 24: Name=Text 24, Type=AUTO_SHAPE (1), Text=✗  Unseen logical errors or missing context
+  Shape 25: Name=Text 25, Type=AUTO_SHAPE (1), Text=✗  Platform keywords assumed incorrectly
+  Shape 26: Name=Text 26, Type=AUTO_SHAPE (1), Text=✗  Errors found only after acting on output
+  Shape 27: Name=Text 27, Type=AUTO_SHAPE (1), Text=≠
+  Shape 28: Name=Text 28, Type=AUTO_SHAPE (1), Text="I trusted Claude's architecture — but the LTP prices could be wrong. Crores of loss at a single click." — Pratham, Soft
+
+--- Slide 2 ---
+Title: No Title
+  Shape 0: Name=Shape 0, Type=AUTO_SHAPE (1), Text=
+  Shape 1: Name=Text 1, Type=AUTO_SHAPE (1), Text=Every AI platform has partial trust signals. None gives users structured, legible evaluation support
+  Shape 2: Name=Shape 2, Type=AUTO_SHAPE (1), Text=
+  Shape 3: Name=Text 3, Type=AUTO_SHAPE (1), Text=Platform
+  Shape 4: Name=Shape 4, Type=AUTO_SHAPE (1), Text=
+  Shape 5: Name=Text 5, Type=AUTO_SHAPE (1), Text=Existing Trust Signal
+  Shape 6: Name=Shape 6, Type=AUTO_SHAPE (1), Text=
+  Shape 7: Name=Text 7, Type=AUTO_SHAPE (1), Text=What It Catches
+  Shape 8: Name=Shape 8, Type=AUTO_SHAPE (1), Text=
+  Shape 9: Name=Text 9, Type=AUTO_SHAPE (1), Text=What It Misses
+  Shape 10: Name=Shape 10, Type=AUTO_SHAPE (1), Text=
+  Shape 11: Name=Text 11, Type=AUTO_SHAPE (1), Text=Evaluation Layer?
+  Shape 12: Name=Shape 12, Type=AUTO_SHAPE (1), Text=
+  Shape 13: Name=Shape 13, Type=AUTO_SHAPE (1), Text=
+  Shape 14: Name=Shape 14, Type=AUTO_SHAPE (1), Text=
+  Shape 15: Name=Shape 15, Type=AUTO_SHAPE (1), Text=
+  Shape 16: Name=Shape 16, Type=AUTO_SHAPE (1), Text=
+  Shape 17: Name=Text 17, Type=AUTO_SHAPE (1), Text=Perplexity
+  Shape 18: Name=Text 18, Type=AUTO_SHAPE (1), Text=Inline citations with source links on every claim
+  Shape 19: Name=Text 19, Type=AUTO_SHAPE (1), Text=Factual inaccuracies in research
+  Shape 20: Name=Text 20, Type=AUTO_SHAPE (1), Text=Reasoning quality, domain fit, completeness of argument
+  Shape 21: Name=Text 21, Type=AUTO_SHAPE (1), Text=Partial ↗
+  Shape 22: Name=Shape 22, Type=AUTO_SHAPE (1), Text=
+  Shape 23: Name=Shape 23, Type=AUTO_SHAPE (1), Text=
+  Shape 24: Name=Shape 24, Type=AUTO_SHAPE (1), Text=
+  Shape 25: Name=Shape 25, Type=AUTO_SHAPE (1), Text=
+  Shape 26: Name=Shape 26, Type=AUTO_SHAPE (1), Text=
+  Shape 27: Name=Text 27, Type=AUTO_SHAPE (1), Text=ChatGPT
+  Shape 28: Name=Text 28, Type=AUTO_SHAPE (1), Text=Web search footnotes, browsing plugin with source cards
+  Shape 29: Name=Text 29, Type=AUTO_SHAPE (1), Text=Outdated or hallucinated facts
+  Shape 30: Name=Text 30, Type=AUTO_SHAPE (1), Text=Code logic errors, missing context, task-specific evaluation
+  Shape 31: Name=Text 31, Type=AUTO_SHAPE (1), Text=No
+  Shape 32: Name=Shape 32, Type=AUTO_SHAPE (1), Text=
+  Shape 33: Name=Shape 33, Type=AUTO_SHAPE (1), Text=
+  Shape 34: Name=Shape 34, Type=AUTO_SHAPE (1), Text=
+  Shape 35: Name=Shape 35, Type=AUTO_SHAPE (1), Text=
+  Shape 36: Name=Shape 36, Type=AUTO_SHAPE (1), Text=
+  Shape 37: Name=Text 37, Type=AUTO_SHAPE (1), Text=Gemini
+  Shape 38: Name=Text 38, Type=AUTO_SHAPE (1), Text=Google Search grounding, 'double-check' feature
+  Shape 39: Name=Text 39, Type=AUTO_SHAPE (1), Text=Factual claims verifiable via Search
+  Shape 40: Name=Text 40, Type=AUTO_SHAPE (1), Text=Subjective quality, writing tone, reasoning gaps
+  Shape 41: Name=Text 41, Type=AUTO_SHAPE (1), Text=No
+  Shape 42: Name=Shape 42, Type=AUTO_SHAPE (1), Text=
+  Shape 43: Name=Shape 43, Type=AUTO_SHAPE (1), Text=
+  Shape 44: Name=Shape 44, Type=AUTO_SHAPE (1), Text=
+  Shape 45: Name=Shape 45, Type=AUTO_SHAPE (1), Text=
+  Shape 46: Name=Shape 46, Type=AUTO_SHAPE (1), Text=
+  Shape 47: Name=Text 47, Type=AUTO_SHAPE (1), Text=Grok
+  Shape 48: Name=Text 48, Type=AUTO_SHAPE (1), Text=Real-time X/Twitter data citations
+  Shape 49: Name=Text 49, Type=AUTO_SHAPE (1), Text=Recency of news and social context
+  Shape 50: Name=Text 50, Type=AUTO_SHAPE (1), Text=Depth of reasoning, citation authority, professional tasks
+  Shape 51: Name=Text 51, Type=AUTO_SHAPE (1), Text=No
+  Shape 52: Name=Shape 52, Type=AUTO_SHAPE (1), Text=
+  Shape 53: Name=Shape 53, Type=AUTO_SHAPE (1), Text=
+  Shape 54: Name=Shape 54, Type=AUTO_SHAPE (1), Text=
+  Shape 55: Name=Shape 55, Type=AUTO_SHAPE (1), Text=
+  Shape 56: Name=Shape 56, Type=AUTO_SHAPE (1), Text=
+  Shape 57: Name=Text 57, Type=AUTO_SHAPE (1), Text=Claude
+  Shape 58: Name=Text 58, Type=AUTO_SHAPE (1), Text=Verbose reasoning on request, no structured evaluation mode
+  Shape 59: Name=Text 59, Type=AUTO_SHAPE (1), Text=Nothing systematically — user-initiated only
+  Shape 60: Name=Text 60, Type=AUTO_SHAPE (1), Text=Everything: when to evaluate, what to check, what's weak
+  Shape 61: Name=Text 61, Type=AUTO_SHAPE (1), Text=No ← Gap
+  Shape 62: Name=Shape 62, Type=AUTO_SHAPE (1), Text=
+  Shape 63: Name=Text 63, Type=AUTO_SHAPE (1), Text=WHAT THE MARKET IS MISSING
+  Shape 64: Name=Text 64, Type=AUTO_SHAPE (1), Text=Citation tools catch factual errors. Grounding tools check recency. Nothing helps users evaluate reasoning quality, comp
+
+--- Slide 3 ---
+Title: No Title
+  Shape 0: Name=Shape 0, Type=AUTO_SHAPE (1), Text=
+  Shape 1: Name=Text 1, Type=AUTO_SHAPE (1), Text=Research (n=35 survey · 6 interviews · 2 task sessions) reveals a calibration problem, not a hallucination problem
+  Shape 2: Name=Shape 2, Type=AUTO_SHAPE (1), Text=
+  Shape 3: Name=Text 3, Type=AUTO_SHAPE (1), Text=85%
+  Shape 4: Name=Text 4, Type=AUTO_SHAPE (1), Text=use AI daily or multiple times a day
+  Shape 5: Name=Shape 5, Type=AUTO_SHAPE (1), Text=
+  Shape 6: Name=Text 6, Type=AUTO_SHAPE (1), Text=71%
+  Shape 7: Name=Text 7, Type=AUTO_SHAPE (1), Text=rate coding / business rules as high-stakes
+  Shape 8: Name=Shape 8, Type=AUTO_SHAPE (1), Text=
+  Shape 9: Name=Text 9, Type=AUTO_SHAPE (1), Text=62%
+  Shape 10: Name=Text 10, Type=AUTO_SHAPE (1), Text=want AI to surface uncertainty proactively
+  Shape 11: Name=Shape 11, Type=AUTO_SHAPE (1), Text=
+  Shape 12: Name=Text 12, Type=AUTO_SHAPE (1), Text=54%
+  Shape 13: Name=Text 13, Type=AUTO_SHAPE (1), Text=accept moderate+ friction for safer outputs
+  Shape 14: Name=Shape 14, Type=AUTO_SHAPE (1), Text=
+  Shape 15: Name=Text 15, Type=AUTO_SHAPE (1), Text=TRUST TRIGGER
+  Shape 16: Name=Text 16, Type=AUTO_SHAPE (1), Text="Clear reasoning" is the #1 trust signal (78%). Users trust architecture decisions in code but are nervous about platfor
+  Shape 17: Name=Shape 17, Type=AUTO_SHAPE (1), Text=
+  Shape 18: Name=Text 18, Type=AUTO_SHAPE (1), Text=OVER-TRUST
+  Shape 19: Name=Text 19, Type=AUTO_SHAPE (1), Text=30% admit they trust outputs too easily and discover errors only after acting — often too late to avoid rework or financ
+  Shape 20: Name=Shape 20, Type=AUTO_SHAPE (1), Text=
+  Shape 21: Name=Text 21, Type=AUTO_SHAPE (1), Text=SKEPTIC TRAP
+  Shape 22: Name=Text 22, Type=AUTO_SHAPE (1), Text=37% double-check everything by re-posting to multiple AIs — losing 30–60 min per high-stakes task on unstructured verifi
+  Shape 23: Name=Shape 23, Type=AUTO_SHAPE (1), Text=
+  Shape 24: Name=Text 24, Type=AUTO_SHAPE (1), Text=DISCOVERY LAG
+  Shape 25: Name=Text 25, Type=AUTO_SHAPE (1), Text=Users catch errors most often while editing or at the point of use — not during initial reading. Polished formatting act
+  Shape 26: Name=Shape 26, Type=AUTO_SHAPE (1), Text=
+  Shape 27: Name=Text 27, Type=AUTO_SHAPE (1), Text=DOMAIN GAP
+  Shape 28: Name=Text 28, Type=AUTO_SHAPE (1), Text=Platform-specific keywords, client constraints, and niche rules are invisible to AI. Claude assumed 'instrumentType' ins
+
+--- Slide 4 ---
+Title: No Title
+  Shape 0: Name=Shape 0, Type=AUTO_SHAPE (1), Text=
+  Shape 1: Name=Text 1, Type=AUTO_SHAPE (1), Text=Working professionals using AI for real, consequential tasks — and losing trust the moment outputs fail them
+  Shape 2: Name=Shape 2, Type=AUTO_SHAPE (1), Text=
+  Shape 3: Name=Shape 3, Type=AUTO_SHAPE (1), Text=
+  Shape 4: Name=Text 4, Type=AUTO_SHAPE (1), Text=TARGET SEGMENT
+  Shape 5: Name=Text 5, Type=AUTO_SHAPE (1), Text=Working professionals & domain experts using AI for high-stakes tasks daily
+  Shape 6: Name=Shape 6, Type=AUTO_SHAPE (1), Text=
+  Shape 7: Name=Text 7, Type=AUTO_SHAPE (1), Text=WHY THIS SEGMENT
+  Shape 8: Name=Text 8, Type=AUTO_SHAPE (1), Text=→  High task stakes → errors have real cost
+  Shape 9: Name=Text 9, Type=AUTO_SHAPE (1), Text=→  Daily AI users → trust patterns are formed
+  Shape 10: Name=Text 10, Type=AUTO_SHAPE (1), Text=→  Domain knowledge → can detect gaps if supported
+  Shape 11: Name=Text 11, Type=AUTO_SHAPE (1), Text=→  Claude's core growth segment for Pro+ plans
+  Shape 12: Name=Shape 12, Type=AUTO_SHAPE (1), Text=
+  Shape 13: Name=Text 13, Type=AUTO_SHAPE (1), Text=NOT targeting beginners (need onboarding) or pure domain experts (already have verification workflows).
+  Shape 14: Name=Shape 14, Type=AUTO_SHAPE (1), Text=
+  Shape 15: Name=Shape 15, Type=AUTO_SHAPE (1), Text=
+  Shape 16: Name=Shape 16, Type=AUTO_SHAPE (1), Text=
+  Shape 17: Name=Text 17, Type=AUTO_SHAPE (1), Text=👨‍💻
+  Shape 18: Name=Text 18, Type=AUTO_SHAPE (1), Text=Pratham, 24 — Software Developer
+  Shape 19: Name=Text 19, Type=AUTO_SHAPE (1), Text=Uses Claude daily for WCF architecture, basket-order systems, and production code.
+  Shape 20: Name=Shape 20, Type=AUTO_SHAPE (1), Text=
+  Shape 21: Name=Text 21, Type=AUTO_SHAPE (1), Text=GOALS
+  Shape 22: Name=Text 22, Type=AUTO_SHAPE (1), Text=Ship correct code fast
+  Shape 23: Name=Text 23, Type=AUTO_SHAPE (1), Text=Feel confident output is production-safe
+  Shape 24: Name=Shape 24, Type=AUTO_SHAPE (1), Text=
+  Shape 25: Name=Text 25, Type=AUTO_SHAPE (1), Text=UNMET NEED
+  Shape 26: Name=Text 26, Type=AUTO_SHAPE (1), Text=Know which parts of Claude's code to trust vs verify
+  Shape 27: Name=Text 27, Type=AUTO_SHAPE (1), Text=A signal that platform-specific logic was assumed, not known
+  Shape 28: Name=Shape 28, Type=AUTO_SHAPE (1), Text=
+  Shape 29: Name=Text 29, Type=AUTO_SHAPE (1), Text=PAIN POINT
+  Shape 30: Name=Text 30, Type=AUTO_SHAPE (1), Text=Claude assumed 'instrumentType' — broke in prod
+  Shape 31: Name=Text 31, Type=AUTO_SHAPE (1), Text=No way to know what assumptions were made
+  Shape 32: Name=Shape 32, Type=AUTO_SHAPE (1), Text=
+  Shape 33: Name=Shape 33, Type=AUTO_SHAPE (1), Text=
+  Shape 34: Name=Shape 34, Type=AUTO_SHAPE (1), Text=
+  Shape 35: Name=Text 35, Type=AUTO_SHAPE (1), Text=👩‍💼
+  Shape 36: Name=Text 36, Type=AUTO_SHAPE (1), Text=Pavitra, 28 — MDM/PIM Consultant
+  Shape 37: Name=Text 37, Type=AUTO_SHAPE (1), Text=Uses Claude to draft business rules, rewrite client messages, and run POCs for integrations.
+  Shape 38: Name=Shape 38, Type=AUTO_SHAPE (1), Text=
+  Shape 39: Name=Text 39, Type=AUTO_SHAPE (1), Text=GOALS
+  Shape 40: Name=Text 40, Type=AUTO_SHAPE (1), Text=Get client-ready output without manual rework
+  Shape 41: Name=Text 41, Type=AUTO_SHAPE (1), Text=Trust Claude's rules before testing on live data
+  Shape 42: Name=Shape 42, Type=AUTO_SHAPE (1), Text=
+  Shape 43: Name=Text 43, Type=AUTO_SHAPE (1), Text=UNMET NEED
+  Shape 44: Name=Text 44, Type=AUTO_SHAPE (1), Text=Know if Claude's rule logic matches her platform constraints
+  Shape 45: Name=Text 45, Type=AUTO_SHAPE (1), Text=Catch reasoning gaps before the client sees them
+  Shape 46: Name=Shape 46, Type=AUTO_SHAPE (1), Text=
+  Shape 47: Name=Text 47, Type=AUTO_SHAPE (1), Text=PAIN POINT
+  Shape 48: Name=Text 48, Type=AUTO_SHAPE (1), Text=Claude gives lengthy answers with no signal on what's uncertain
+  Shape 49: Name=Text 49, Type=AUTO_SHAPE (1), Text=Switched from GPT to Claude for honesty — but still has no structured eval
+
+--- Slide 5 ---
+Title: No Title
+  Shape 0: Name=Shape 0, Type=AUTO_SHAPE (1), Text=
+  Shape 1: Name=Text 1, Type=AUTO_SHAPE (1), Text=Judgment breaks down at 3 specific moments — not randomly, but because no structured evaluation layer exists
+  Shape 2: Name=Shape 2, Type=AUTO_SHAPE (1), Text=
+  Shape 3: Name=Shape 3, Type=AUTO_SHAPE (1), Text=
+  Shape 4: Name=Text 4, Type=AUTO_SHAPE (1), Text=1
+  Shape 5: Name=Text 5, Type=AUTO_SHAPE (1), Text=PROMPT
+  Shape 6: Name=Text 6, Type=AUTO_SHAPE (1), Text=User describes task. Often forgets to mention platform constraints, stakes level, or domain-specific rules.
+  Shape 7: Name=Shape 7, Type=AUTO_SHAPE (1), Text=
+  Shape 8: Name=Shape 8, Type=AUTO_SHAPE (1), Text=
+  Shape 9: Name=Shape 9, Type=AUTO_SHAPE (1), Text=
+  Shape 10: Name=Text 10, Type=AUTO_SHAPE (1), Text=2
+  Shape 11: Name=Text 11, Type=AUTO_SHAPE (1), Text=RESPONSE
+  Shape 12: Name=Text 12, Type=AUTO_SHAPE (1), Text=Claude answers fast. Output looks authoritative and complete.
+  Shape 13: Name=Shape 13, Type=AUTO_SHAPE (1), Text=
+  Shape 14: Name=Shape 14, Type=AUTO_SHAPE (1), Text=
+  Shape 15: Name=Shape 15, Type=AUTO_SHAPE (1), Text=
+  Shape 16: Name=Text 16, Type=AUTO_SHAPE (1), Text=3
+  Shape 17: Name=Text 17, Type=AUTO_SHAPE (1), Text=FIRST READ
+  Shape 18: Name=Text 18, Type=AUTO_SHAPE (1), Text=User skims. Formatting creates false sense of completeness. Trust triggered by polish.
+  Shape 19: Name=Shape 19, Type=AUTO_SHAPE (1), Text=
+  Shape 20: Name=Shape 20, Type=AUTO_SHAPE (1), Text=
+  Shape 21: Name=Shape 21, Type=AUTO_SHAPE (1), Text=
+  Shape 22: Name=Text 22, Type=AUTO_SHAPE (1), Text=4
+  Shape 23: Name=Text 23, Type=AUTO_SHAPE (1), Text=EVALUATION
+  Shape 24: Name=Text 24, Type=AUTO_SHAPE (1), Text=User either trusts it, endlessly re-checks, or notices something off by accident.
+  Shape 25: Name=Shape 25, Type=AUTO_SHAPE (1), Text=
+  Shape 26: Name=Shape 26, Type=AUTO_SHAPE (1), Text=
+  Shape 27: Name=Shape 27, Type=AUTO_SHAPE (1), Text=
+  Shape 28: Name=Text 28, Type=AUTO_SHAPE (1), Text=5
+  Shape 29: Name=Text 29, Type=AUTO_SHAPE (1), Text=REVISION
+  Shape 30: Name=Text 30, Type=AUTO_SHAPE (1), Text=User fixes the obvious — but has no signal about what else might still be wrong.
+  Shape 31: Name=Shape 31, Type=AUTO_SHAPE (1), Text=
+  Shape 32: Name=Shape 32, Type=AUTO_SHAPE (1), Text=
+  Shape 33: Name=Shape 33, Type=AUTO_SHAPE (1), Text=
+  Shape 34: Name=Text 34, Type=AUTO_SHAPE (1), Text=6
+  Shape 35: Name=Text 35, Type=AUTO_SHAPE (1), Text=ACTION
+  Shape 36: Name=Text 36, Type=AUTO_SHAPE (1), Text=Output ships. Sometimes with undetected flaws still embedded.
+  Shape 37: Name=Shape 37, Type=AUTO_SHAPE (1), Text=
+  Shape 38: Name=Shape 38, Type=AUTO_SHAPE (1), Text=
+  Shape 39: Name=Text 39, Type=AUTO_SHAPE (1), Text=BREAKDOWN 1
+  Shape 40: Name=Text 40, Type=AUTO_SHAPE (1), Text=Over-trust triggered | by polished formatting
+  Shape 41: Name=Shape 41, Type=AUTO_SHAPE (1), Text=
+  Shape 42: Name=Shape 42, Type=AUTO_SHAPE (1), Text=
+  Shape 43: Name=Text 43, Type=AUTO_SHAPE (1), Text=BREAKDOWN 2
+  Shape 44: Name=Text 44, Type=AUTO_SHAPE (1), Text=No structured | evaluation path exists
+  Shape 45: Name=Shape 45, Type=AUTO_SHAPE (1), Text=
+  Shape 46: Name=Shape 46, Type=AUTO_SHAPE (1), Text=
+  Shape 47: Name=Text 47, Type=AUTO_SHAPE (1), Text=BREAKDOWN 3
+  Shape 48: Name=Text 48, Type=AUTO_SHAPE (1), Text=Errors surface only | after action is taken
+  Shape 49: Name=Shape 49, Type=AUTO_SHAPE (1), Text=
+  Shape 50: Name=Text 50, Type=AUTO_SHAPE (1), Text=ROOT CAUSE:
+  Shape 51: Name=Text 51, Type=AUTO_SHAPE (1), Text=There is no structured moment in the Claude experience where users are supported in evaluating whether an output is actu
+
+--- Slide 6 ---
+Title: No Title
+  Shape 0: Name=Shape 0, Type=AUTO_SHAPE (1), Text=
+  Shape 1: Name=Text 1, Type=AUTO_SHAPE (1), Text=3 directions explored against 5 design principles — only one resolves all tensions simultaneously
+  Shape 2: Name=Shape 2, Type=AUTO_SHAPE (1), Text=
+  Shape 3: Name=Text 3, Type=AUTO_SHAPE (1), Text=1. Preserve speed by default
+  Shape 4: Name=Text 4, Type=AUTO_SHAPE (1), Text=2. Add scrutiny only when needed
+  Shape 5: Name=Text 5, Type=AUTO_SHAPE (1), Text=3. Make evaluation legible, not opaque
+  Shape 6: Name=Text 6, Type=AUTO_SHAPE (1), Text=4. Support human judgment — never automate it
+  Shape 7: Name=Text 7, Type=AUTO_SHAPE (1), Text=5. Match depth to task stakes
+  Shape 8: Name=Shape 8, Type=AUTO_SHAPE (1), Text=
+  Shape 9: Name=Shape 9, Type=AUTO_SHAPE (1), Text=
+  Shape 10: Name=Shape 10, Type=AUTO_SHAPE (1), Text=
+  Shape 11: Name=Text 11, Type=AUTO_SHAPE (1), Text=CONSIDERED
+  Shape 12: Name=Text 12, Type=AUTO_SHAPE (1), Text=Task Lens | + Review Mode
+  Shape 13: Name=Text 13, Type=AUTO_SHAPE (1), Text=WHAT IT IS
+  Shape 14: Name=Text 14, Type=AUTO_SHAPE (1), Text=A toggle re-renders the answer through a task-specific lens (e.g. Research Mode, Code Mode) with colour-coded inline hig
+  Shape 15: Name=Text 15, Type=AUTO_SHAPE (1), Text=PROMISE
+  Shape 16: Name=Text 16, Type=AUTO_SHAPE (1), Text=Zero new workflow required. Low friction. Visually intuitive.
+  Shape 17: Name=Text 17, Type=AUTO_SHAPE (1), Text=LIMIT
+  Shape 18: Name=Text 18, Type=AUTO_SHAPE (1), Text=Highlights feel arbitrary without explanation. Doesn't surface missing context or unstated assumptions. Doesn't scale ac
+  Shape 19: Name=Shape 19, Type=AUTO_SHAPE (1), Text=
+  Shape 20: Name=Shape 20, Type=AUTO_SHAPE (1), Text=
+  Shape 21: Name=Shape 21, Type=AUTO_SHAPE (1), Text=
+  Shape 22: Name=Text 22, Type=AUTO_SHAPE (1), Text=CONSIDERED
+  Shape 23: Name=Text 23, Type=AUTO_SHAPE (1), Text=Interactive | Decision Paths
+  Shape 24: Name=Text 24, Type=AUTO_SHAPE (1), Text=WHAT IT IS
+  Shape 25: Name=Text 25, Type=AUTO_SHAPE (1), Text=After an answer, Claude guides the user through a branching decision tree: "Does this address your constraint? Is the re
+  Shape 26: Name=Text 26, Type=AUTO_SHAPE (1), Text=PROMISE
+  Shape 27: Name=Text 27, Type=AUTO_SHAPE (1), Text=Builds evaluation habits. Surfaces uncertainty interactively. Creates a moment of structured reflection.
+  Shape 28: Name=Text 28, Type=AUTO_SHAPE (1), Text=LIMIT
+  Shape 29: Name=Text 29, Type=AUTO_SHAPE (1), Text=High cognitive load on frequent tasks. Decision fatigue. Hard to calibrate branching across wildly different use cases.
+  Shape 30: Name=Shape 30, Type=AUTO_SHAPE (1), Text=
+  Shape 31: Name=Shape 31, Type=AUTO_SHAPE (1), Text=
+  Shape 32: Name=Shape 32, Type=AUTO_SHAPE (1), Text=
+  Shape 33: Name=Text 33, Type=AUTO_SHAPE (1), Text=CHOSEN ✓
+  Shape 34: Name=Text 34, Type=AUTO_SHAPE (1), Text=Progressive Evaluation | with Specialized Evaluators
+  Shape 35: Name=Text 35, Type=AUTO_SHAPE (1), Text=WHAT IT IS
+  Shape 36: Name=Text 36, Type=AUTO_SHAPE (1), Text=Claude answers first (fast). Users optionally invoke evaluators (Code, Research, Reasoning, Risk, Writing, Career). Each
+  Shape 37: Name=Text 37, Type=AUTO_SHAPE (1), Text=PROMISE
+  Shape 38: Name=Text 38, Type=AUTO_SHAPE (1), Text=Opt-in = no friction by default. Domain-specific = actionable. Transparent findings = not another black box.
+  Shape 39: Name=Text 39, Type=AUTO_SHAPE (1), Text=LIMIT
+  Shape 40: Name=Text 40, Type=AUTO_SHAPE (1), Text=Evaluator quality must be high. Risk of false confidence if explanations are generic or vague.
+  Shape 41: Name=Shape 41, Type=AUTO_SHAPE (1), Text=
+  Shape 42: Name=Text 42, Type=AUTO_SHAPE (1), Text=Solution
+  Shape 43: Name=Text 43, Type=AUTO_SHAPE (1), Text=Reach (0–10)
+  Shape 44: Name=Text 44, Type=AUTO_SHAPE (1), Text=Impact (0–3)
+  Shape 45: Name=Text 45, Type=AUTO_SHAPE (1), Text=Confidence
+  Shape 46: Name=Text 46, Type=AUTO_SHAPE (1), Text=Effort (weeks)
+  Shape 47: Name=Text 47, Type=AUTO_SHAPE (1), Text=RICE Score
+  Shape 48: Name=Text 48, Type=AUTO_SHAPE (1), Text=RICE = (Reach × Impact × Confidence) / Effort
+  Shape 49: Name=Shape 49, Type=AUTO_SHAPE (1), Text=
+  Shape 50: Name=Text 50, Type=AUTO_SHAPE (1), Text=Task Lens + Review Mode
+  Shape 51: Name=Text 51, Type=AUTO_SHAPE (1), Text=6
+  Shape 52: Name=Text 52, Type=AUTO_SHAPE (1), Text=1
+  Shape 53: Name=Text 53, Type=AUTO_SHAPE (1), Text=60%
+  Shape 54: Name=Text 54, Type=AUTO_SHAPE (1), Text=3
+  Shape 55: Name=Text 55, Type=AUTO_SHAPE (1), Text=12.0
+  Shape 56: Name=Shape 56, Type=AUTO_SHAPE (1), Text=
+  Shape 57: Name=Text 57, Type=AUTO_SHAPE (1), Text=Interactive Decision Paths
+  Shape 58: Name=Text 58, Type=AUTO_SHAPE (1), Text=7
+  Shape 59: Name=Text 59, Type=AUTO_SHAPE (1), Text=2
+  Shape 60: Name=Text 60, Type=AUTO_SHAPE (1), Text=65%
+  Shape 61: Name=Text 61, Type=AUTO_SHAPE (1), Text=4
+  Shape 62: Name=Text 62, Type=AUTO_SHAPE (1), Text=22.8
+  Shape 63: Name=Shape 63, Type=AUTO_SHAPE (1), Text=
+  Shape 64: Name=Text 64, Type=AUTO_SHAPE (1), Text=Progressive Eval + Evaluators
+  Shape 65: Name=Text 65, Type=AUTO_SHAPE (1), Text=8
+  Shape 66: Name=Text 66, Type=AUTO_SHAPE (1), Text=3
+  Shape 67: Name=Text 67, Type=AUTO_SHAPE (1), Text=75%
+  Shape 68: Name=Text 68, Type=AUTO_SHAPE (1), Text=3
+  Shape 69: Name=Text 69, Type=AUTO_SHAPE (1), Text=60.0
+  Shape 70: Name=Shape 70, Type=AUTO_SHAPE (1), Text=
+  Shape 71: Name=Text 71, Type=AUTO_SHAPE (1), Text=📋  Survey Results →
+  Shape 72: Name=Shape 72, Type=AUTO_SHAPE (1), Text=
+  Shape 73: Name=Text 73, Type=AUTO_SHAPE (1), Text=🎙  Interview Transcripts →
+
+--- Slide 7 ---
+Title: No Title
+  Shape 0: Name=Text 0, Type=AUTO_SHAPE (1), Text=Progressive Evaluation with Specialized Evaluators wins on every dimension that matters
+  Shape 1: Name=Shape 1, Type=AUTO_SHAPE (1), Text=
+  Shape 2: Name=Shape 2, Type=AUTO_SHAPE (1), Text=
+  Shape 3: Name=Shape 3, Type=AUTO_SHAPE (1), Text=
+  Shape 4: Name=Text 4, Type=AUTO_SHAPE (1), Text=⚡
+  Shape 5: Name=Text 5, Type=AUTO_SHAPE (1), Text=Zero friction for satisfied users
+  Shape 6: Name=Text 6, Type=AUTO_SHAPE (1), Text=Claude responds at full speed. Evaluation is completely opt-in. Users who are confident proceed normally — no slowdown, 
+  Shape 7: Name=Shape 7, Type=AUTO_SHAPE (1), Text=
+  Shape 8: Name=Shape 8, Type=AUTO_SHAPE (1), Text=
+  Shape 9: Name=Text 9, Type=AUTO_SHAPE (1), Text=🎯
+  Shape 10: Name=Text 10, Type=AUTO_SHAPE (1), Text=Task-specific, not generic
+  Shape 11: Name=Text 11, Type=AUTO_SHAPE (1), Text=A Code Evaluator checks different things than a Research or Career Evaluator. Specificity makes findings actionable rath
+  Shape 12: Name=Shape 12, Type=AUTO_SHAPE (1), Text=
+  Shape 13: Name=Shape 13, Type=AUTO_SHAPE (1), Text=
+  Shape 14: Name=Text 14, Type=AUTO_SHAPE (1), Text=🔍
+  Shape 15: Name=Text 15, Type=AUTO_SHAPE (1), Text=Transparent — not another black box
+  Shape 16: Name=Text 16, Type=AUTO_SHAPE (1), Text=Each evaluator explains what it checked, what looks strong, what is weak, and what requires independent verification. No
+  Shape 17: Name=Shape 17, Type=AUTO_SHAPE (1), Text=
+  Shape 18: Name=Shape 18, Type=AUTO_SHAPE (1), Text=
+  Shape 19: Name=Text 19, Type=AUTO_SHAPE (1), Text=⚖️
+  Shape 20: Name=Text 20, Type=AUTO_SHAPE (1), Text=Serves both user types simultaneously
+  Shape 21: Name=Text 21, Type=AUTO_SHAPE (1), Text=Over-trusters get a structured nudge to review. Skeptics get a focused path instead of re-posting to 3 AIs. Both build c
+  Shape 22: Name=Shape 22, Type=AUTO_SHAPE (1), Text=
+  Shape 23: Name=Text 23, Type=AUTO_SHAPE (1), Text=BUSINESS CASE FOR ANTHROPIC
+  Shape 24: Name=Text 24, Type=AUTO_SHAPE (1), Text=Users who complete high-stakes tasks confidently retain longer, upgrade to Pro, and deepen usage. Every avoided trust fa
+
+--- Slide 8 ---
+Title: No Title
+  Shape 0: Name=Shape 0, Type=AUTO_SHAPE (1), Text=
+  Shape 1: Name=Text 1, Type=AUTO_SHAPE (1), Text=The product flow: fast by default, structured on demand — with a real evaluator output example
+  Shape 2: Name=Shape 2, Type=AUTO_SHAPE (1), Text=
+  Shape 3: Name=Text 3, Type=AUTO_SHAPE (1), Text=🔗  Live Prototype →
+  Shape 4: Name=Shape 4, Type=AUTO_SHAPE (1), Text=
+  Shape 5: Name=Shape 5, Type=AUTO_SHAPE (1), Text=
+  Shape 6: Name=Text 6, Type=AUTO_SHAPE (1), Text=1
+  Shape 7: Name=Text 7, Type=AUTO_SHAPE (1), Text=USER PROMPTS CLAUDE
+  Shape 8: Name=Text 8, Type=AUTO_SHAPE (1), Text=User describes their task. Claude may ask one clarifying question before responding — especially for high-stakes domains
+  Shape 9: Name=Shape 9, Type=AUTO_SHAPE (1), Text=
+  Shape 10: Name=Shape 10, Type=AUTO_SHAPE (1), Text=
+  Shape 11: Name=Shape 11, Type=AUTO_SHAPE (1), Text=
+  Shape 12: Name=Text 12, Type=AUTO_SHAPE (1), Text=2
+  Shape 13: Name=Text 13, Type=AUTO_SHAPE (1), Text=CLAUDE ANSWERS NORMALLY
+  Shape 14: Name=Text 14, Type=AUTO_SHAPE (1), Text=Full, fast response as usual. No added friction at this stage. Confident users proceed directly.
+  Shape 15: Name=Shape 15, Type=AUTO_SHAPE (1), Text=
+  Shape 16: Name=Shape 16, Type=AUTO_SHAPE (1), Text=
+  Shape 17: Name=Shape 17, Type=AUTO_SHAPE (1), Text=
+  Shape 18: Name=Text 18, Type=AUTO_SHAPE (1), Text=3
+  Shape 19: Name=Text 19, Type=AUTO_SHAPE (1), Text=EVALUATE THIS ANSWER?
+  Shape 20: Name=Text 20, Type=AUTO_SHAPE (1), Text=Subtle, non-intrusive CTA appears after the response. Claude may recommend a specific evaluator based on detected task t
+  Shape 21: Name=Shape 21, Type=AUTO_SHAPE (1), Text=
+  Shape 22: Name=Shape 22, Type=AUTO_SHAPE (1), Text=
+  Shape 23: Name=Shape 23, Type=AUTO_SHAPE (1), Text=
+  Shape 24: Name=Text 24, Type=AUTO_SHAPE (1), Text=4
+  Shape 25: Name=Text 25, Type=AUTO_SHAPE (1), Text=SELECT EVALUATOR(S)
+  Shape 26: Name=Text 26, Type=AUTO_SHAPE (1), Text=User picks from: Code · Research · Writing · Reasoning · Risk · Career. Multi-select available for complex outputs.
+  Shape 27: Name=Shape 27, Type=AUTO_SHAPE (1), Text=
+  Shape 28: Name=Shape 28, Type=AUTO_SHAPE (1), Text=
+  Shape 29: Name=Shape 29, Type=AUTO_SHAPE (1), Text=
+  Shape 30: Name=Text 30, Type=AUTO_SHAPE (1), Text=5
+  Shape 31: Name=Text 31, Type=AUTO_SHAPE (1), Text=EVALUATORS INSPECT
+  Shape 32: Name=Text 32, Type=AUTO_SHAPE (1), Text=Each evaluator checks its domain: what is strong, what may be weak, what assumptions were made, what to verify.
+  Shape 33: Name=Shape 33, Type=AUTO_SHAPE (1), Text=
+  Shape 34: Name=Shape 34, Type=AUTO_SHAPE (1), Text=
+  Shape 35: Name=Shape 35, Type=AUTO_SHAPE (1), Text=
+  Shape 36: Name=Text 36, Type=AUTO_SHAPE (1), Text=6
+  Shape 37: Name=Text 37, Type=AUTO_SHAPE (1), Text=USER DECIDES
+  Shape 38: Name=Text 38, Type=AUTO_SHAPE (1), Text=Keep the answer · Ask Claude to revise · Try a different approach. Final judgment stays with the user.
+  Shape 39: Name=Shape 39, Type=AUTO_SHAPE (1), Text=
+  Shape 40: Name=Shape 40, Type=AUTO_SHAPE (1), Text=
+  Shape 41: Name=Text 41, Type=AUTO_SHAPE (1), Text=LIVE EXAMPLE — Code Evaluator on a WCF/OMS basket-order business rule (from task observation with Pratham)
+  Shape 42: Name=Shape 42, Type=AUTO_SHAPE (1), Text=
+  Shape 43: Name=Shape 43, Type=AUTO_SHAPE (1), Text=
+  Shape 44: Name=Text 44, Type=AUTO_SHAPE (1), Text=✓ STRONG
+  Shape 45: Name=Text 45, Type=AUTO_SHAPE (1), Text=Architecture & data flow match the described OMS structure. WCF service creation pattern is correct. iBasketService foll
+  Shape 46: Name=Shape 46, Type=AUTO_SHAPE (1), Text=
+  Shape 47: Name=Shape 47, Type=AUTO_SHAPE (1), Text=
+  Shape 48: Name=Text 48, Type=AUTO_SHAPE (1), Text=⚠ VERIFY
+  Shape 49: Name=Text 49, Type=AUTO_SHAPE (1), Text=Keyword 'instrumentType' was assumed — confirm this exists in your platform. Your codebase uses 'securityType'. This mis
+  Shape 50: Name=Shape 50, Type=AUTO_SHAPE (1), Text=
+  Shape 51: Name=Shape 51, Type=AUTO_SHAPE (1), Text=
+  Shape 52: Name=Text 52, Type=AUTO_SHAPE (1), Text=⊘ MISSING
+  Shape 53: Name=Text 53, Type=AUTO_SHAPE (1), Text=Error handling for LTP price mismatch is not addressed. Edge case: what happens if the price feed fails mid-trade? Crore
+
+--- Slide 9 ---
+Title: No Title
+  Shape 0: Name=Shape 0, Type=AUTO_SHAPE (1), Text=
+  Shape 1: Name=Text 1, Type=AUTO_SHAPE (1), Text=6 specialized evaluators — each inspects a distinct dimension and explains its findings, never just scores them
+  Shape 2: Name=Shape 2, Type=AUTO_SHAPE (1), Text=
+  Shape 3: Name=Shape 3, Type=AUTO_SHAPE (1), Text=
+  Shape 4: Name=Shape 4, Type=AUTO_SHAPE (1), Text=
+  Shape 5: Name=Text 5, Type=AUTO_SHAPE (1), Text=⌨
+  Shape 6: Name=Text 6, Type=AUTO_SHAPE (1), Text=Code Evaluator
+  Shape 7: Name=Text 7, Type=AUTO_SHAPE (1), Text=CHECKS:
+  Shape 8: Name=Text 8, Type=AUTO_SHAPE (1), Text=Architecture fit for stated stack
+  Shape 9: Name=Text 9, Type=AUTO_SHAPE (1), Text=Platform-specific keyword validity
+  Shape 10: Name=Text 10, Type=AUTO_SHAPE (1), Text=Edge cases & error handling gaps
+  Shape 11: Name=Text 11, Type=AUTO_SHAPE (1), Text=Production-readiness assessment
+  Shape 12: Name=Shape 12, Type=AUTO_SHAPE (1), Text=
+  Shape 13: Name=Shape 13, Type=AUTO_SHAPE (1), Text=
+  Shape 14: Name=Shape 14, Type=AUTO_SHAPE (1), Text=
+  Shape 15: Name=Text 15, Type=AUTO_SHAPE (1), Text=🔬
+  Shape 16: Name=Text 16, Type=AUTO_SHAPE (1), Text=Research Evaluator
+  Shape 17: Name=Text 17, Type=AUTO_SHAPE (1), Text=CHECKS:
+  Shape 18: Name=Text 18, Type=AUTO_SHAPE (1), Text=Source recency & authority level
+  Shape 19: Name=Text 19, Type=AUTO_SHAPE (1), Text=Claim coverage vs gaps in answer
+  Shape 20: Name=Text 20, Type=AUTO_SHAPE (1), Text=Conflicting evidence surfaced?
+  Shape 21: Name=Text 21, Type=AUTO_SHAPE (1), Text=Conclusion vs evidence alignment
+  Shape 22: Name=Shape 22, Type=AUTO_SHAPE (1), Text=
+  Shape 23: Name=Shape 23, Type=AUTO_SHAPE (1), Text=
+  Shape 24: Name=Shape 24, Type=AUTO_SHAPE (1), Text=
+  Shape 25: Name=Text 25, Type=AUTO_SHAPE (1), Text=🧠
+  Shape 26: Name=Text 26, Type=AUTO_SHAPE (1), Text=Reasoning Evaluator
+  Shape 27: Name=Text 27, Type=AUTO_SHAPE (1), Text=CHECKS:
+  Shape 28: Name=Text 28, Type=AUTO_SHAPE (1), Text=Logical chain validity
+  Shape 29: Name=Text 29, Type=AUTO_SHAPE (1), Text=Are assumptions made explicit?
+  Shape 30: Name=Text 30, Type=AUTO_SHAPE (1), Text=Alternative interpretations noted?
+  Shape 31: Name=Text 31, Type=AUTO_SHAPE (1), Text=Weak or unsupported inferences
+  Shape 32: Name=Shape 32, Type=AUTO_SHAPE (1), Text=
+  Shape 33: Name=Shape 33, Type=AUTO_SHAPE (1), Text=
+  Shape 34: Name=Shape 34, Type=AUTO_SHAPE (1), Text=
+  Shape 35: Name=Text 35, Type=AUTO_SHAPE (1), Text=✍
+  Shape 36: Name=Text 36, Type=AUTO_SHAPE (1), Text=Writing Evaluator
+  Shape 37: Name=Text 37, Type=AUTO_SHAPE (1), Text=CHECKS:
+  Shape 38: Name=Text 38, Type=AUTO_SHAPE (1), Text=Tone & audience match
+  Shape 39: Name=Text 39, Type=AUTO_SHAPE (1), Text=Completeness of argument
+  Shape 40: Name=Text 40, Type=AUTO_SHAPE (1), Text=Generic vs specific language
+  Shape 41: Name=Text 41, Type=AUTO_SHAPE (1), Text=Structure, flow & clarity
+  Shape 42: Name=Shape 42, Type=AUTO_SHAPE (1), Text=
+  Shape 43: Name=Shape 43, Type=AUTO_SHAPE (1), Text=
+  Shape 44: Name=Shape 44, Type=AUTO_SHAPE (1), Text=
+  Shape 45: Name=Text 45, Type=AUTO_SHAPE (1), Text=⚠
+  Shape 46: Name=Text 46, Type=AUTO_SHAPE (1), Text=Risk Evaluator
+  Shape 47: Name=Text 47, Type=AUTO_SHAPE (1), Text=CHECKS:
+  Shape 48: Name=Text 48, Type=AUTO_SHAPE (1), Text=Financial / operational exposure
+  Shape 49: Name=Text 49, Type=AUTO_SHAPE (1), Text=What if core assumptions fail?
+  Shape 50: Name=Text 50, Type=AUTO_SHAPE (1), Text=Regulatory or compliance flags
+  Shape 51: Name=Text 51, Type=AUTO_SHAPE (1), Text=Reversibility of recommendations
+  Shape 52: Name=Shape 52, Type=AUTO_SHAPE (1), Text=
+  Shape 53: Name=Shape 53, Type=AUTO_SHAPE (1), Text=
+  Shape 54: Name=Shape 54, Type=AUTO_SHAPE (1), Text=
+  Shape 55: Name=Text 55, Type=AUTO_SHAPE (1), Text=💼
+  Shape 56: Name=Text 56, Type=AUTO_SHAPE (1), Text=Career Evaluator
+  Shape 57: Name=Text 57, Type=AUTO_SHAPE (1), Text=CHECKS:
+  Shape 58: Name=Text 58, Type=AUTO_SHAPE (1), Text=ATS keyword match vs JD
+  Shape 59: Name=Text 59, Type=AUTO_SHAPE (1), Text=Claim specificity vs vague filler
+  Shape 60: Name=Text 60, Type=AUTO_SHAPE (1), Text=Coverage gaps vs job description
+  Shape 61: Name=Text 61, Type=AUTO_SHAPE (1), Text=Tone & culture fit signals
+
+--- Slide 10 ---
+Title: No Title
+  Shape 0: Name=Shape 0, Type=AUTO_SHAPE (1), Text=
+  Shape 1: Name=Text 1, Type=AUTO_SHAPE (1), Text=Success metrics, failure modes, and why solving this is worth it for Anthropic
+  Shape 2: Name=Shape 2, Type=AUTO_SHAPE (1), Text=
+  Shape 3: Name=Shape 3, Type=AUTO_SHAPE (1), Text=
+  Shape 4: Name=Text 4, Type=AUTO_SHAPE (1), Text=HOW WE MEASURE SUCCESS
+  Shape 5: Name=Shape 5, Type=AUTO_SHAPE (1), Text=
+  Shape 6: Name=Text 6, Type=AUTO_SHAPE (1), Text=NORTH STAR
+  Shape 7: Name=Text 7, Type=AUTO_SHAPE (1), Text=% of high-stakes sessions with ≥1 evaluator used → 'trust-activated sessions' as share of total
+  Shape 8: Name=Shape 8, Type=AUTO_SHAPE (1), Text=
+  Shape 9: Name=Text 9, Type=AUTO_SHAPE (1), Text=LEADING INDICATORS
+  Shape 10: Name=Text 10, Type=AUTO_SHAPE (1), Text=Evaluator activation rate by task type (code vs research vs career)
+  Shape 11: Name=Text 11, Type=AUTO_SHAPE (1), Text=Revision rate post-evaluation — are findings actionable?
+  Shape 12: Name=Text 12, Type=AUTO_SHAPE (1), Text=User-reported confidence delta before vs after evaluation
+  Shape 13: Name=Shape 13, Type=AUTO_SHAPE (1), Text=
+  Shape 14: Name=Text 14, Type=AUTO_SHAPE (1), Text=GUARDRAIL METRICS
+  Shape 15: Name=Text 15, Type=AUTO_SHAPE (1), Text=Latency must not degrade >10% — evaluation is async + opt-in
+  Shape 16: Name=Text 16, Type=AUTO_SHAPE (1), Text=CTA ignore rate >70% → trigger logic needs rethinking
+  Shape 17: Name=Text 17, Type=AUTO_SHAPE (1), Text=% users relying solely on evaluator consensus alone
+  Shape 18: Name=Shape 18, Type=AUTO_SHAPE (1), Text=
+  Shape 19: Name=Text 19, Type=AUTO_SHAPE (1), Text=“Trust in AI shouldn’t come from polish alone — it should come from structured support for human judgment.”
+  Shape 20: Name=Shape 20, Type=AUTO_SHAPE (1), Text=
+  Shape 21: Name=Shape 21, Type=AUTO_SHAPE (1), Text=
+  Shape 22: Name=Text 22, Type=AUTO_SHAPE (1), Text=KNOWN RISKS & MITIGATIONS
+  Shape 23: Name=Shape 23, Type=AUTO_SHAPE (1), Text=
+  Shape 24: Name=Shape 24, Type=AUTO_SHAPE (1), Text=
+  Shape 25: Name=Text 25, Type=AUTO_SHAPE (1), Text=HIGH
+  Shape 26: Name=Text 26, Type=AUTO_SHAPE (1), Text=Evaluator becomes a new black box
+  Shape 27: Name=Text 27, Type=AUTO_SHAPE (1), Text=→ Every finding must state what was checked and why. User can ask evaluator to explain.
+  Shape 28: Name=Shape 28, Type=AUTO_SHAPE (1), Text=
+  Shape 29: Name=Shape 29, Type=AUTO_SHAPE (1), Text=
+  Shape 30: Name=Text 30, Type=AUTO_SHAPE (1), Text=HIGH
+  Shape 31: Name=Text 31, Type=AUTO_SHAPE (1), Text=False confidence from evaluator consensus
+  Shape 32: Name=Text 32, Type=AUTO_SHAPE (1), Text=→ Evaluators report independently. No combined score. Residual uncertainty always stated.
+  Shape 33: Name=Shape 33, Type=AUTO_SHAPE (1), Text=
+  Shape 34: Name=Shape 34, Type=AUTO_SHAPE (1), Text=
+  Shape 35: Name=Text 35, Type=AUTO_SHAPE (1), Text=MED
+  Shape 36: Name=Text 36, Type=AUTO_SHAPE (1), Text=Evaluator overload — too many findings
+  Shape 37: Name=Text 37, Type=AUTO_SHAPE (1), Text=→ Cap at 3–5 prioritised findings. User requests 'show more'. High-signal by default.
+  Shape 38: Name=Shape 38, Type=AUTO_SHAPE (1), Text=
+  Shape 39: Name=Shape 39, Type=AUTO_SHAPE (1), Text=
+  Shape 40: Name=Text 40, Type=AUTO_SHAPE (1), Text=MED
+  Shape 41: Name=Text 41, Type=AUTO_SHAPE (1), Text=Users don't know when to evaluate
+  Shape 42: Name=Text 42, Type=AUTO_SHAPE (1), Text=→ Claude detects task type and contextually suggests the right evaluator. Smart CTA.
+  Shape 43: Name=Shape 43, Type=AUTO_SHAPE (1), Text=
+  Shape 44: Name=Shape 44, Type=AUTO_SHAPE (1), Text=
+  Shape 45: Name=Text 45, Type=AUTO_SHAPE (1), Text=BUSINESS OUTCOMES FOR ANTHROPIC
+  Shape 46: Name=Text 46, Type=AUTO_SHAPE (1), Text=📈  Retention: Users who trust their outputs stay. Every resolved trust failure is a retained professional subscriber.
+  Shape 47: Name=Text 47, Type=AUTO_SHAPE (1), Text=⬆  Pro Upgrades: Evaluators available on Pro/Team → free users who experience the feature have a clear upgrade trigger.
+  Shape 48: Name=Text 48, Type=AUTO_SHAPE (1), Text=🔒  Stickiness: Evaluator history and calibration data are Claude-specific — switching costs rise as users build trust pa

@@ -49,7 +49,7 @@ export async function generateAlternateAnswer(
   userPrompt: string,
   originalAnswer: string,
   strategy: string
-): Promise<string> {
+): Promise<{ answer: string; comparison?: string }> {
   if (!isLiveAnswerEnabled()) {
     clientDevLog("client alternate source: mock (live flag off)");
     return fetchMockAlternateAnswer(userPrompt);
@@ -75,7 +75,10 @@ export async function generateAlternateAnswer(
 
     const data = (await res.json()) as AlternateResponseBody;
     clientDevLog(`client alternate source: ${data.source}`);
-    return data.answer;
+    return {
+      answer: data.answer,
+      comparison: data.comparison,
+    };
   } catch (error) {
     console.error("[generateAlternateAnswer] Live call failed, using mock fallback:", error);
     clientDevLog("client alternate source: mock (API error fallback)");

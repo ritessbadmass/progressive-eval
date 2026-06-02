@@ -5,7 +5,7 @@ import type { ReviseErrorBody, ReviseRequestBody, ReviseResponseBody } from "@/t
 
 const DEFAULT_NVIDIA_BASE = "https://integrate.api.nvidia.com/v1";
 const DEFAULT_NVIDIA_MODEL = "meta/llama-3.1-8b-instruct";
-const REVISE_MAX_TOKENS = 512;
+const REVISE_MAX_TOKENS = 2048;
 const NVIDIA_TIMEOUT_MS = 25_000;
 
 function isLiveAnswerEnabled(): boolean {

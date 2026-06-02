@@ -56,6 +56,7 @@ export interface AlternateRequestBody {
 export interface AlternateResponseBody {
   answer: string;
   source: AnswerSource;
+  comparison?: string;
 }
 
 export interface AlternateErrorBody {

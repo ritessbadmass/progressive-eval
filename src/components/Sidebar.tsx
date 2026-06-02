@@ -8,7 +8,6 @@ import {
   LayoutGrid,
   Code,
   Briefcase,
-  Download,
 } from "lucide-react";
 
 interface SidebarProps {
@@ -88,23 +87,24 @@ export function Sidebar({ onNewChat }: SidebarProps) {
 
       {/* Bottom Profile Group */}
       <div className="flex flex-col items-center gap-[18px]">
-        {/* Install / Download App Button with blue dot indicator */}
+        {/* Generic User Profile Icon - no initials, no name */}
         <button
           type="button"
-          className="relative flex size-9 items-center justify-center rounded-lg text-claude-muted transition-colors hover:bg-claude-surface-2 hover:text-claude-text"
-          aria-label="Install app"
-        >
-          <Download className="size-[20px] stroke-[1.8]" />
-          <span className="absolute top-[6px] right-[6px] size-2 rounded-full border-2 border-claude-surface bg-claude-accent" />
-        </button>
-
-        {/* RP Profile Circle avatar */}
-        <button
-          type="button"
-          className="flex size-9 items-center justify-center rounded-full bg-claude-surface-2 text-[12px] font-semibold text-claude-text transition-transform hover:scale-105"
+          className="flex size-9 items-center justify-center rounded-lg text-claude-muted transition-colors hover:bg-claude-surface-2 hover:text-claude-text"
           aria-label="User Profile"
         >
-          RP
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="size-[20px]"
+          >
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+          </svg>
         </button>
       </div>
     </aside>

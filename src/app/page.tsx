@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { AnswerCard } from "@/components/AnswerCard";
 import { ClaudeAvatar } from "@/components/ClaudeAvatar";
 import { ChatHeader } from "@/components/ChatHeader";
@@ -36,12 +36,28 @@ interface ChatTurn {
   submittedPrompt: string;
   answer: AnswerState;
   evaluation: EvaluationState;
+  revisedAnswer?: AnswerState | null;
 }
 
 export default function HomePage() {
   const [prompt, setPrompt] = useState("");
+  const [greeting, setGreeting] = useState("Good evening");
+
+  useEffect(() => {
+    const hours = new Date().getHours();
+    if (hours >= 5 && hours < 12) {
+      setGreeting("Good morning");
+    } else if (hours >= 12 && hours < 17) {
+      setGreeting("Good afternoon");
+    } else if (hours >= 17 && hours < 22) {
+      setGreeting("Good evening");
+    } else {
+      setGreeting("Good night");
+    }
+  }, []);
   const [submittedPrompt, setSubmittedPrompt] = useState("");
   const [answer, setAnswer] = useState<AnswerState | null>(null);
+  const [revisedAnswer, setRevisedAnswer] = useState<AnswerState | null>(null);
   const [evaluation, setEvaluation] =
     useState<EvaluationState>(initialEvaluation);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -66,6 +82,7 @@ export default function HomePage() {
           submittedPrompt,
           answer,
           evaluation,
+          revisedAnswer,
         },
       ]);
     }
@@ -74,6 +91,7 @@ export default function HomePage() {
     setSubmittedPrompt(trimmed);
     setPrompt(""); // Clear the input box immediately!
     setEvaluation(initialEvaluation);
+    setRevisedAnswer(null);
     setAnswer({
       prompt: trimmed,
       content: "",
@@ -93,7 +111,7 @@ export default function HomePage() {
     } finally {
       setIsSubmitting(false);
     }
-  }, [prompt, isSubmitting, submittedPrompt, answer, evaluation]);
+  }, [prompt, isSubmitting, submittedPrompt, answer, evaluation, revisedAnswer]);
 
   const handleStartEvaluation = () => {
     setEvaluation((prev) => ({ ...prev, phase: "picker" }));
@@ -152,31 +170,110 @@ export default function HomePage() {
 
     if (decision === "keep") return;
 
-    setAnswer({
+    setRevisedAnswer({
       prompt: submittedPrompt,
       content: "",
       variant: decision === "revise" ? "revised" : "alternate",
-      label:
-        decision === "revise"
-          ? "Revised using findings"
-          : "Different approach",
       isLoading: true,
     });
 
-    const content =
-      decision === "revise"
-        ? await reviseAnswer(submittedPrompt, answer.content, evaluation.results)
-        : await generateAlternateAnswer(submittedPrompt, answer.content, "different approach");
+    try {
+      if (decision === "revise") {
+        const content = await reviseAnswer(submittedPrompt, answer.content, evaluation.results);
+        setRevisedAnswer({
+          prompt: submittedPrompt,
+          content,
+          variant: "revised",
+          isLoading: false,
+        });
+      } else {
+        const { answer: content, comparison } = await generateAlternateAnswer(
+          submittedPrompt,
+          answer.content,
+          "different approach"
+        );
+        setRevisedAnswer({
+          prompt: submittedPrompt,
+          content,
+          variant: "alternate",
+          comparison: comparison || "Pivots to a conceptually different framework to address the prompt from a new angle.",
+          isLoading: false,
+        });
+      }
+    } catch (error) {
+      console.error("[handleDecision] Failed to generate revised/alternate answer:", error);
+      setRevisedAnswer(null);
+    }
+  };
 
-    setAnswer({
+  const handleKeepAnswer = () => {
+    if (revisedAnswer) {
+      setRevisedAnswer((prev) => (prev ? { ...prev, isFinalized: true } : null));
+    }
+  };
+
+  const handleTryDifferentApproach = async () => {
+    if (!answer || !submittedPrompt) return;
+
+    setRevisedAnswer({
       prompt: submittedPrompt,
-      content,
-      variant: decision === "revise" ? "revised" : "alternate",
-      label:
-        decision === "revise"
-          ? "Revised using findings"
-          : "Different approach",
-      isLoading: false,
+      content: "",
+      variant: "alternate",
+      isLoading: true,
+    });
+
+    try {
+      const { answer: content, comparison } = await generateAlternateAnswer(
+        submittedPrompt,
+        answer.content,
+        "different approach"
+      );
+      setRevisedAnswer({
+        prompt: submittedPrompt,
+        content,
+        variant: "alternate",
+        comparison: comparison || "Pivots to a conceptually different framework to address the prompt from a new angle.",
+        isLoading: false,
+      });
+    } catch (error) {
+      console.error("[handleTryDifferentApproach] Failed to generate alternate answer:", error);
+      setRevisedAnswer(null);
+    }
+  };
+
+  const handleEvaluateNewResponse = () => {
+    if (!revisedAnswer || !submittedPrompt) return;
+
+    // Save previous turn history including evaluation results
+    setPastTurns((prev) => [
+      ...prev,
+      {
+        id: Date.now().toString(),
+        submittedPrompt,
+        answer: answer!,
+        evaluation: {
+          ...evaluation,
+          decision: revisedAnswer.variant === "revised" ? "revise" : "alternate",
+          phase: "complete",
+        },
+      },
+    ]);
+
+    // Set the revised/alternate answer as the new initial answer
+    setAnswer({
+      ...revisedAnswer,
+      variant: "initial",
+    });
+
+    // Clear revisedAnswer state
+    setRevisedAnswer(null);
+
+    // Set evaluation to picker phase to trigger evaluation workflow
+    setEvaluation({
+      phase: "picker",
+      selectedEvaluators: [],
+      results: [],
+      playbook: "balanced",
     });
   };
 
@@ -184,6 +281,7 @@ export default function HomePage() {
     setPrompt("");
     setSubmittedPrompt("");
     setAnswer(null);
+    setRevisedAnswer(null);
     setEvaluation(initialEvaluation);
     setPastTurns([]);
   };
@@ -216,7 +314,7 @@ export default function HomePage() {
                       </g>
                     </svg>
                     <h1 className="font-serif text-[42px] font-normal tracking-normal text-claude-text">
-                      Good evening, Ritesh
+                      {greeting}
                     </h1>
                   </div>
 
@@ -363,12 +461,37 @@ export default function HomePage() {
                                 {turn.evaluation.decision === "keep" &&
                                   "You kept this answer. Evaluation complete."}
                                 {turn.evaluation.decision === "revise" &&
-                                  "Revised answer shown above using evaluator findings."}
+                                  "Revised Response generated below based on evaluator findings."}
                                 {turn.evaluation.decision === "alternate" &&
-                                  "Alternate approach shown above."}
+                                  "Alternate Response generated below."}
                               </p>
                             )}
                           </div>
+                        </div>
+                      )}
+
+                      {turn.revisedAnswer && (
+                        <div className="mt-6 border-t border-claude-border/10 pt-6 opacity-90 animate-in fade-in">
+                          <h3 className="font-serif text-lg font-semibold mb-1 ml-[52px] text-claude-text">
+                            {turn.revisedAnswer.variant === "revised" ? "Revised Response" : "Alternate Response"}
+                          </h3>
+                          
+                          <AnswerCard answer={turn.revisedAnswer} />
+
+                          {turn.revisedAnswer.variant === "alternate" && turn.revisedAnswer.comparison && (
+                            <div className="ml-[52px] mt-4 p-4.5 rounded-xl bg-claude-surface border border-claude-accent/20 text-[13.5px] leading-relaxed shadow-sm">
+                              <h4 className="font-semibold text-claude-accent flex items-center gap-2 mb-2 select-none">
+                                How this approach differs conceptually:
+                              </h4>
+                              <p className="text-claude-text-secondary">
+                                {turn.revisedAnswer.comparison}
+                              </p>
+                            </div>
+                          )}
+                          
+                          <p className="mt-4 ml-[52px] text-xs text-claude-muted font-medium select-none">
+                            ✓ Answer kept. Evaluation flow complete.
+                          </p>
                         </div>
                       )}
                     </div>
@@ -444,16 +567,95 @@ export default function HomePage() {
                               {evaluation.decision === "keep" &&
                                 "You kept this answer. Evaluation complete."}
                               {evaluation.decision === "revise" &&
-                                "Revised answer shown above using evaluator findings."}
+                                "Revised Response generated below based on evaluator findings."}
                               {evaluation.decision === "alternate" &&
-                                "Alternate approach shown above."}
+                                "Alternate Response generated below."}
                             </p>
                           )}
                       </div>
                     </div>
                   )}
 
-                  {evaluation.phase === "complete" && (
+                  {revisedAnswer && (
+                    <div className="mt-6 border-t border-claude-border/30 pt-6 animate-in fade-in slide-in-from-bottom duration-300">
+                    <h3 className="font-serif text-xl font-medium tracking-tight mb-2 ml-[52px] text-claude-text">
+                      {revisedAnswer.variant === "revised" ? "Revised Response" : "Alternate Response"}
+                    </h3>
+                    
+                    <AnswerCard answer={revisedAnswer} />
+
+                    {/* Try different approach strategy differences container */}
+                    {revisedAnswer.variant === "alternate" && revisedAnswer.comparison && !revisedAnswer.isLoading && (
+                      <div className="ml-[52px] mt-4 p-4.5 rounded-xl bg-claude-surface border border-claude-accent/25 text-[13.5px] leading-relaxed shadow-sm">
+                        <h4 className="font-semibold text-claude-accent flex items-center gap-2 mb-2 select-none">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="size-4 text-claude-accent"
+                          >
+                            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+                          </svg>
+                          How this approach differs conceptually:
+                        </h4>
+                        <p className="text-claude-text-secondary">
+                          {revisedAnswer.comparison}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Action Options below the response */}
+                    {!revisedAnswer.isLoading && (
+                      <div className="ml-[52px] mt-6 flex flex-wrap items-center gap-3">
+                        {revisedAnswer.isFinalized ? (
+                          <div className="flex flex-col gap-2">
+                            <span className="text-sm text-claude-muted font-medium bg-claude-surface px-4 py-2 rounded-full border border-claude-border select-none">
+                              ✓ Answer kept. Evaluation flow complete.
+                            </span>
+                            <button
+                              type="button"
+                              onClick={handleNewQuestion}
+                              className="self-start text-sm text-claude-muted underline-offset-4 transition-colors hover:text-claude-text hover:underline mt-2 ml-1"
+                            >
+                              Start a new conversation
+                            </button>
+                          </div>
+                        ) : (
+                          <>
+                            <button
+                              type="button"
+                              onClick={handleKeepAnswer}
+                              className="rounded-full bg-claude-accent text-claude-bg hover:bg-claude-accent/90 transition-all px-5 py-2 text-xs font-semibold shadow-sm hover:scale-[1.02] active:scale-[0.98]"
+                            >
+                              Keep Answer
+                            </button>
+                            
+                            <button
+                              type="button"
+                              onClick={handleTryDifferentApproach}
+                              className="rounded-full border border-claude-border bg-claude-surface text-claude-text hover:bg-claude-surface-2 hover:text-claude-text transition-all px-5 py-2 text-xs font-medium shadow-xs hover:scale-[1.02] active:scale-[0.98]"
+                            >
+                              Try different approach
+                            </button>
+
+                            <button
+                              type="button"
+                              onClick={handleEvaluateNewResponse}
+                              className="rounded-full border border-claude-border bg-claude-surface text-claude-muted hover:bg-claude-surface-2 hover:text-claude-text transition-all px-5 py-2 text-xs font-medium shadow-xs hover:scale-[1.02] active:scale-[0.98]"
+                            >
+                              Evaluate this response
+                            </button>
+                          </>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                  )}
+
+                  {evaluation.phase === "complete" && !revisedAnswer && (
                     <div className="ml-11 py-6">
                       <button
                         type="button"

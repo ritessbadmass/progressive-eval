@@ -36,10 +36,10 @@ This revision addresses concerns raised during evaluation—especially around ${
 *Mock revision for: ${prompt.slice(0, 60)}${prompt.length > 60 ? "…" : ""}*`;
 }
 
-export async function fetchMockAlternateAnswer(prompt: string): Promise<string> {
+export async function fetchMockAlternateAnswer(prompt: string): Promise<{ answer: string; comparison: string }> {
   await delay(1200);
 
-  return `**Alternate approach**
+  const answer = `**Alternate approach**
 
 Instead of a step-by-step plan, here is a **decision-first** framing for: *${prompt.slice(0, 70)}${prompt.length > 70 ? "…" : ""}*
 
@@ -59,6 +59,10 @@ Route through evaluators when the output informs money, safety, compliance, publ
 
 **Next step**
 Pick at most three lenses, read *what was checked* and *verify before use*, then choose: keep, revise with findings, or regenerate with a different angle—like this one.`;
+
+  const comparison = `Pivoted from an execution-focused step-by-step checklist to a decision-first criteria guide. This approach highlights *when* to verify rather than *how* to draft, reducing cognitive load for rapid decisions.`;
+
+  return { answer, comparison };
 }
 
 const RESULT_TEMPLATES: Record<

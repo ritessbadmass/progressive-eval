@@ -37,6 +37,8 @@ export interface AnswerState {
   isLoading: boolean;
   /** First-answer provenance when live mode is enabled */
   source?: AnswerSource;
+  comparison?: string;
+  isFinalized?: boolean;
 }
 
 export type EvaluationPhase =

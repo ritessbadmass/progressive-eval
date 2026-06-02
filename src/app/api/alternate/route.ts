@@ -5,7 +5,7 @@ import type { AlternateErrorBody, AlternateRequestBody, AlternateResponseBody } 
 
 const DEFAULT_NVIDIA_BASE = "https://integrate.api.nvidia.com/v1";
 const DEFAULT_NVIDIA_MODEL = "meta/llama-3.1-8b-instruct";
-const ALTERNATE_MAX_TOKENS = 512;
+const ALTERNATE_MAX_TOKENS = 2048;
 const NVIDIA_TIMEOUT_MS = 25_000;
 
 function isLiveAnswerEnabled(): boolean {
@@ -28,7 +28,7 @@ async function generateAlternateAnswerWithNvidia(
   userPrompt: string,
   originalAnswer: string,
   strategy: string
-): Promise<string> {
+): Promise<{ answer: string; comparison: string }> {
   const apiKey = process.env.NVIDIA_API_KEY!.trim();
   const baseUrl = (
     process.env.NVIDIA_API_BASE?.trim() || DEFAULT_NVIDIA_BASE
@@ -38,18 +38,20 @@ async function generateAlternateAnswerWithNvidia(
   devLog(`NVIDIA alternate request model=${model} strategy=${strategy}`);
 
   const systemPrompt = `You are a specialist assistant.
-Your task is to generate a fresh alternate answer to a user's prompt, using a different strategy: "${strategy}".
+Your task is to generate a fresh alternate answer to a user's prompt using a different strategy: "${strategy}", and write a brief description of how this strategy is conceptually different from the previous answer.
 
-Guidelines for the alternate answer based on the strategy:
-- If strategy is "more cautious": Speak with high uncertainty calibration, highlight caveats, downside risks, and what to verify before use.
-- If strategy is "more structured": Use highly organized markdown tables, nested lists, bullet points, and clean separation of concepts.
-- If strategy is "more concise": Keep it extremely short, brief, and to-the-point, eliminating any fluff.
-- If strategy is "different approach" or other: Pivot to a completely different conceptual framework, paradigm, or angle compared to the original answer.
+You MUST respond with a JSON object containing exactly two keys:
+1. "answer": The string containing the fresh alternate answer in markdown format. Do not include conversational introduction or transition text (e.g. "Here is an alternate approach using a more cautious strategy").
+2. "comparison": A string containing a concise explanation (2-3 sentences) detailing exactly how this approach conceptually or structurally differs from the original answer to highlight the key changes.
 
 Original Answer to pivot from:
 ${originalAnswer}
 
-Generate the fresh alternate answer directly. Do not include conversational introduction or transition text (e.g. "Here is an alternate approach using a more cautious strategy").`;
+Response format must be valid JSON:
+{
+  "answer": "...",
+  "comparison": "..."
+}`;
 
   const userMessage = `User Question:
 ${userPrompt}`;
@@ -86,7 +88,28 @@ ${userPrompt}`;
     throw new Error("NVIDIA API returned no message content");
   }
 
-  return content;
+  // Strip code fences if returned by the LLM
+  let jsonText = content;
+  if (jsonText.startsWith("```")) {
+    jsonText = jsonText.replace(/^```json\s*/i, "").replace(/```$/, "").trim();
+  }
+
+  try {
+    const parsed = JSON.parse(jsonText) as { answer: string; comparison: string };
+    if (parsed.answer) {
+      return {
+        answer: parsed.answer.trim(),
+        comparison: parsed.comparison ? parsed.comparison.trim() : "Pivoted strategy compared to the previous version.",
+      };
+    }
+  } catch (e) {
+    // Fallback if parsing fails
+  }
+
+  return {
+    answer: content,
+    comparison: "Pivoted strategy compared to the previous version.",
+  };
 }
 
 export async function POST(request: Request) {
@@ -123,13 +146,13 @@ export async function POST(request: Request) {
 
     if (shouldAttemptLiveCall()) {
       try {
-        const answer = await generateAlternateAnswerWithNvidia(
+        const { answer, comparison } = await generateAlternateAnswerWithNvidia(
           userPrompt,
           originalAnswer,
           strategy
         );
         devLog("alternate source: live");
-        return NextResponse.json<AlternateResponseBody>({ answer, source: "live" });
+        return NextResponse.json<AlternateResponseBody>({ answer, comparison, source: "live" });
       } catch (error) {
         console.error("[api/alternate] NVIDIA call failed, using mock:", error);
         devLog("alternate source: mock (NVIDIA error fallback)");
@@ -140,15 +163,16 @@ export async function POST(request: Request) {
       );
     }
 
-    const answer = await fetchMockAlternateAnswer(userPrompt);
-    return NextResponse.json<AlternateResponseBody>({ answer, source: "mock" });
+    const { answer, comparison } = await fetchMockAlternateAnswer(userPrompt);
+    return NextResponse.json<AlternateResponseBody>({ answer, comparison, source: "mock" });
   } catch (error) {
     console.error("[api/alternate] Unexpected error:", error);
     devLog("alternate source: mock (unexpected error fallback)");
 
-    const answer = await fetchMockAlternateAnswer(promptForFallback);
+    const { answer, comparison } = await fetchMockAlternateAnswer(promptForFallback);
     return NextResponse.json<AlternateResponseBody>({
       answer,
+      comparison,
       source: "mock",
     });
   }
