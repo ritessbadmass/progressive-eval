@@ -5,7 +5,7 @@ import {
 } from "@/lib/evaluatorPrompts";
 import { parseEvaluatorResponse } from "@/lib/evaluatorParse";
 import { devLog } from "@/lib/devLog";
-import { MAX_EVALUATORS } from "@/lib/evaluators";
+import { getEvaluatorConfig, MAX_EVALUATORS } from "@/lib/evaluators";
 import { getMockEvaluatorResult } from "@/lib/mockData";
 import type {
   EvaluateErrorBody,
@@ -13,7 +13,7 @@ import type {
   EvaluateResponseBody,
   EvaluationSource,
 } from "@/types/api";
-import type { EvaluatorResult, EvaluatorType } from "@/types/evaluator";
+import type { EvaluatorResult, EvaluatorType, EvaluationPlaybook } from "@/types/evaluator";
 
 const DEFAULT_NVIDIA_BASE = "https://integrate.api.nvidia.com/v1";
 const DEFAULT_NVIDIA_MODEL = "meta/llama-3.1-8b-instruct";
@@ -69,15 +69,18 @@ function shouldForceMockForType(type: EvaluatorType): boolean {
 async function callNvidiaEvaluator(
   type: EvaluatorType,
   userPrompt: string,
-  baseAnswer: string
+  baseAnswer: string,
+  playbook: EvaluationPlaybook
 ): Promise<string> {
   const apiKey = process.env.NVIDIA_API_KEY!.trim();
   const baseUrl = (
     process.env.NVIDIA_API_BASE?.trim() || DEFAULT_NVIDIA_BASE
   ).replace(/\/$/, "");
-  const model = getEvaluatorModel();
+  
+  const config = getEvaluatorConfig(type);
+  const model = config?.model || getEvaluatorModel();
 
-  devLog(`NVIDIA evaluate type=${type} model=${model}`);
+  devLog(`NVIDIA evaluate type=${type} model=${model} playbook=${playbook}`);
 
   const res = await fetch(`${baseUrl}/chat/completions`, {
     method: "POST",
@@ -88,7 +91,7 @@ async function callNvidiaEvaluator(
     body: JSON.stringify({
       model,
       messages: [
-        { role: "system", content: getEvaluatorSystemPrompt(type) },
+        { role: "system", content: getEvaluatorSystemPrompt(type, playbook) },
         {
           role: "user",
           content: buildEvaluatorUserMessage(userPrompt, baseAnswer),
@@ -121,11 +124,12 @@ async function evaluateOne(
   type: EvaluatorType,
   userPrompt: string,
   baseAnswer: string,
-  useLive: boolean
+  useLive: boolean,
+  playbook: EvaluationPlaybook
 ): Promise<{ result: EvaluatorResult; usedLive: boolean }> {
   if (useLive && !shouldForceMockForType(type)) {
     try {
-      const raw = await callNvidiaEvaluator(type, userPrompt, baseAnswer);
+      const raw = await callNvidiaEvaluator(type, userPrompt, baseAnswer, playbook);
       const result = parseEvaluatorResponse(type, raw);
       devLog(`evaluator ${type}: live`);
       return { result, usedLive: true };
@@ -207,8 +211,12 @@ export async function POST(request: Request) {
       );
     }
 
+    const playbook = (body as any).playbook === "rigor" || (body as any).playbook === "style"
+      ? ((body as any).playbook as EvaluationPlaybook)
+      : "balanced";
+
     const outcomes = await Promise.all(
-      types.map((type) => evaluateOne(type, userPrompt, baseAnswer, useLive))
+      types.map((type) => evaluateOne(type, userPrompt, baseAnswer, useLive, playbook))
     );
 
     const results = outcomes.map((o) => o.result);

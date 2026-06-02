@@ -1,7 +1,7 @@
 import { fetchMockEvaluationResults } from "@/lib/mockData";
 import { clientDevLog } from "@/lib/clientDevLog";
 import type { EvaluateRequestBody, EvaluateResponseBody } from "@/types/api";
-import type { EvaluatorResult, EvaluatorType } from "@/types/evaluator";
+import type { EvaluatorResult, EvaluatorType, EvaluationPlaybook } from "@/types/evaluator";
 
 export type EvaluationSource = EvaluateResponseBody["source"];
 
@@ -13,6 +13,7 @@ export interface RunEvaluatorsParams {
   prompt: string;
   answer: string;
   evaluatorTypes: EvaluatorType[];
+  playbook?: EvaluationPlaybook;
 }
 
 export interface RunEvaluatorsResult {
@@ -23,10 +24,11 @@ export interface RunEvaluatorsResult {
 async function requestEvaluatorsFromApi(
   params: RunEvaluatorsParams
 ): Promise<RunEvaluatorsResult> {
-  const body: EvaluateRequestBody = {
+  const body: EvaluateRequestBody & { playbook?: EvaluationPlaybook } = {
     userPrompt: params.prompt,
     baseAnswer: params.answer,
     evaluatorTypes: params.evaluatorTypes,
+    playbook: params.playbook,
   };
 
   const res = await fetch("/api/evaluate", {

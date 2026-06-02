@@ -6,36 +6,42 @@ export const EVALUATORS: EvaluatorConfig[] = [
     name: "Reasoning Evaluator",
     tagline: "Logic, assumptions, and internal consistency",
     dimension: "Argument structure & inference quality",
+    model: "meta/llama-3.1-70b-instruct",
   },
   {
     id: "research",
     name: "Research Evaluator",
     tagline: "Evidence, sources, and factual grounding",
     dimension: "Claims, citations, and recency",
+    model: "meta/llama-3.1-8b-instruct",
   },
   {
     id: "writing",
     name: "Writing Evaluator",
     tagline: "Clarity, structure, and audience fit",
     dimension: "Tone, organization, and readability",
+    model: "meta/llama-3.1-8b-instruct",
   },
   {
     id: "risk",
     name: "Risk Evaluator",
     tagline: "Harm, compliance, and decision sensitivity",
     dimension: "Downside exposure & verification needs",
+    model: "meta/llama-3.1-70b-instruct",
   },
   {
     id: "code",
     name: "Code Evaluator",
     tagline: "Correctness, edge cases, testability, and errors",
     dimension: "Production readiness & syntax validity",
+    model: "meta/llama-3.1-70b-instruct",
   },
   {
     id: "career",
     name: "Career Evaluator",
     tagline: "Impact framing, specificity, and tone signals",
     dimension: "ATS fit, recruiter relevance, & role alignment",
+    model: "meta/llama-3.1-8b-instruct",
   },
 ];
 

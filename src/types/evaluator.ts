@@ -9,6 +9,8 @@ export interface EvaluatorConfig {
   tagline: string;
   /** What dimension this lens focuses on */
   dimension: string;
+  /** Specific model to use (for specialized routing) */
+  model?: string;
 }
 
 export interface EvaluatorResult {
@@ -48,6 +50,8 @@ export type UserDecision = "keep" | "revise" | "alternate";
 
 export type EvaluationSource = "mock" | "live" | "mixed";
 
+export type EvaluationPlaybook = "balanced" | "rigor" | "style";
+
 export interface EvaluationState {
   phase: EvaluationPhase;
   selectedEvaluators: EvaluatorType[];
@@ -55,4 +59,5 @@ export interface EvaluationState {
   decision?: UserDecision;
   /** Set when live evaluator mode is enabled */
   source?: EvaluationSource;
+  playbook?: EvaluationPlaybook;
 }

@@ -1,4 +1,4 @@
-import type { EvaluatorType } from "@/types/evaluator";
+import type { EvaluatorType, EvaluationPlaybook } from "@/types/evaluator";
 
 const JSON_SCHEMA = `Respond with ONLY valid JSON (no markdown fences) using this exact shape:
 {
@@ -13,6 +13,27 @@ const JSON_SCHEMA = `Respond with ONLY valid JSON (no markdown fences) using thi
 const SHARED_RULES = `You are a specialist review lens, not a rewriter. Review ONLY the answer text against the user question.
 Be brief. Do not fabricate facts, citations, or sources. When uncertain, say "needs verification".
 Do not score or use percentages. severity reflects concern for how the user might use this answer.`;
+
+const FEW_SHOT_EXAMPLE = `
+Example of expected review format and diagnostic depth:
+Input User Question: "What is the best way to handle errors in React?"
+Input Answer to Review: "Just use try-catch inside your components. It will catch everything and you can log it to console."
+
+Expected Output:
+{
+  "summary": "The answer provides a simplistic approach using try-catch but misses React-specific error boundaries.",
+  "checked_for": ["React error handling", "try-catch limitations", "production readiness"],
+  "strengths": ["Simple to understand for beginners", "Highlights logging to the console"],
+  "weaknesses": ["try-catch does not catch errors in event handlers or lifecycle methods", "Misses React Error Boundaries for UI fallback", "Console logging is insufficient for production monitoring"],
+  "verify_before_use": ["Review React documentation on Error Boundaries", "Set up a centralized monitoring service (e.g. Sentry)"],
+  "severity": "medium"
+}`;
+
+const PLAYBOOK_INSTRUCTIONS: Record<EvaluationPlaybook, string> = {
+  balanced: "Perform a balanced, comprehensive, and helpful review covering both strengths and weaknesses evenly.",
+  rigor: "CRITICAL: Perform a highly rigorous audit. Focus heavily on security vulnerabilities, edge-case failures, unstated assumptions, extreme downside risks, compliance sensitivity, and strict verification checkpoints. Elevate severity if there is any potential practical harm or engineering risk.",
+  style: "FOCUS: Perform a style and clarity audit. Focus heavily on active voice, brevity, structure, scannability, target audience fit, readability, and recruiter relevance (e.g. ATS keywords, impact metrics). Point out any generic fluff or weak phrasing that should be tightened."
+};
 
 const PROMPTS: Record<EvaluatorType, string> = {
   reasoning: `${SHARED_RULES}
@@ -58,8 +79,14 @@ Flag career alignment issues; do not re-write the resume/profile.
 ${JSON_SCHEMA}`,
 };
 
-export function getEvaluatorSystemPrompt(type: EvaluatorType): string {
-  return PROMPTS[type];
+export function getEvaluatorSystemPrompt(
+  type: EvaluatorType,
+  playbook: EvaluationPlaybook = "balanced"
+): string {
+  const basePrompt = PROMPTS[type];
+  const playbookRule = PLAYBOOK_INSTRUCTIONS[playbook];
+  
+  return `${basePrompt}\n\n[PLAYBOOK CRITERIA]\n${playbookRule}\n\n${FEW_SHOT_EXAMPLE}`;
 }
 
 export function buildEvaluatorUserMessage(

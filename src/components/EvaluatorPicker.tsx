@@ -2,7 +2,7 @@
 
 import { Loader2 } from "lucide-react";
 import { EVALUATORS, MAX_EVALUATORS } from "@/lib/evaluators";
-import type { EvaluatorType } from "@/types/evaluator";
+import type { EvaluatorType, EvaluationPlaybook } from "@/types/evaluator";
 import { cn } from "@/lib/utils";
 
 const EVALUATOR_CAPABILITIES: Record<string, string> = {
@@ -20,6 +20,8 @@ interface EvaluatorPickerProps {
   onRun: () => void;
   onCancel: () => void;
   isRunning?: boolean;
+  playbook: EvaluationPlaybook;
+  onPlaybookChange: (playbook: EvaluationPlaybook) => void;
 }
 
 export function EvaluatorPicker({
@@ -28,18 +30,55 @@ export function EvaluatorPicker({
   onRun,
   onCancel,
   isRunning = false,
+  playbook,
+  onPlaybookChange,
 }: EvaluatorPickerProps) {
   const atMax = selected.length >= MAX_EVALUATORS;
 
   return (
-    <div className="animate-in fade-in slide-up ml-11 space-y-4 border-l border-claude-border py-4 pl-5">
-      <div>
-        <p className="text-sm font-semibold text-claude-text">
-          Choose specialist lenses
-        </p>
-        <p className="mt-1 text-sm text-claude-muted">
-          Up to {MAX_EVALUATORS} — each reviews one dimension only.
-        </p>
+    <div className="animate-in fade-in slide-up ml-11 space-y-5 border-l border-claude-border py-4 pl-5">
+      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-claude-border/20 pb-4">
+        <div>
+          <p className="text-sm font-semibold text-claude-text">
+            Choose specialist lenses
+          </p>
+          <p className="mt-1 text-xs text-claude-muted">
+            Up to {MAX_EVALUATORS} — each reviews one dimension only.
+          </p>
+        </div>
+
+        {/* Playbook Presets Segmented Selector */}
+        <div className="flex flex-col gap-1.5">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-claude-muted select-none">
+            Preset playbook
+          </span>
+          <div className="inline-flex rounded-xl bg-claude-surface-2 p-1 border border-claude-border select-none">
+            {[
+              { id: "balanced", name: "Balanced", desc: "Comprehensive review" },
+              { id: "rigor", name: "Rigor & Security", desc: "Audits edge-cases & safety" },
+              { id: "style", name: "Style & Clarity", desc: "Checks brevity & tone" }
+            ].map((item) => {
+              const isActive = playbook === item.id;
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  disabled={isRunning}
+                  onClick={() => onPlaybookChange(item.id as EvaluationPlaybook)}
+                  className={cn(
+                    "rounded-lg px-3.5 py-1 text-[11px] font-semibold transition-all duration-200 cursor-pointer focus:outline-none",
+                    isActive
+                      ? "bg-claude-accent text-background shadow-sm font-bold"
+                      : "text-claude-muted hover:text-claude-text"
+                  )}
+                  title={item.desc}
+                >
+                  {item.name}
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       <div className="flex flex-wrap gap-3.5 pt-1.5">

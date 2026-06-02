@@ -21,12 +21,14 @@ import type {
   EvaluationState,
   EvaluatorType,
   UserDecision,
+  EvaluationPlaybook,
 } from "@/types/evaluator";
 
 const initialEvaluation: EvaluationState = {
   phase: "idle",
   selectedEvaluators: [],
   results: [],
+  playbook: "balanced",
 };
 
 interface ChatTurn {
@@ -114,6 +116,10 @@ export default function HomePage() {
     });
   };
 
+  const handlePlaybookChange = (playbook: EvaluationPlaybook) => {
+    setEvaluation((prev) => ({ ...prev, playbook }));
+  };
+
   const handleRunEvaluation = async () => {
     const selected = evaluation.selectedEvaluators;
     if (selected.length === 0 || !answer?.content || !submittedPrompt) return;
@@ -124,6 +130,7 @@ export default function HomePage() {
       prompt: submittedPrompt,
       answer: answer.content,
       evaluatorTypes: selected,
+      playbook: evaluation.playbook || "balanced",
     });
 
     setEvaluation((prev) => ({
@@ -390,6 +397,8 @@ export default function HomePage() {
                       onRun={handleRunEvaluation}
                       onCancel={handleCancelEvaluation}
                       isRunning={evaluation.phase === "running"}
+                      playbook={evaluation.playbook || "balanced"}
+                      onPlaybookChange={handlePlaybookChange}
                     />
                   )}
 
