@@ -18,7 +18,9 @@ import type { EvaluatorResult, EvaluatorType, EvaluationPlaybook } from "@/types
 const DEFAULT_NVIDIA_BASE = "https://integrate.api.nvidia.com/v1";
 const DEFAULT_NVIDIA_MODEL = "meta/llama-3.1-8b-instruct";
 const EVALUATOR_MAX_TOKENS = 400;
-const NVIDIA_TIMEOUT_MS = 25_000;
+const NVIDIA_TIMEOUT_MS = 9_000; // Vercel Hobby limit is 10s
+
+export const maxDuration = 30; // used if plan allows it
 
 const VALID_TYPES: EvaluatorType[] = [
   "reasoning",

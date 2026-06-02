@@ -6,7 +6,9 @@ import type { ReviseErrorBody, ReviseRequestBody, ReviseResponseBody } from "@/t
 const DEFAULT_NVIDIA_BASE = "https://integrate.api.nvidia.com/v1";
 const DEFAULT_NVIDIA_MODEL = "meta/llama-3.1-8b-instruct";
 const REVISE_MAX_TOKENS = 2048;
-const NVIDIA_TIMEOUT_MS = 25_000;
+const NVIDIA_TIMEOUT_MS = 9_000; // Vercel Hobby limit is 10s
+
+export const maxDuration = 30; // used if plan allows it
 
 function isLiveAnswerEnabled(): boolean {
   return process.env.NEXT_PUBLIC_ENABLE_LIVE_ANSWER === "true";
