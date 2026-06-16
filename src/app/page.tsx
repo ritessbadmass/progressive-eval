@@ -329,104 +329,51 @@ export default function HomePage() {
                       isCenteredState={true}
                     />
 
-                    {/* Action Pills exactly as in user's screenshot */}
-                    <div className="mt-7 flex flex-wrap items-center justify-center gap-2">
-                      <button
-                        type="button"
-                        onClick={() => setPrompt("Write a ")}
-                        className="flex items-center gap-2 rounded-full border border-claude-border bg-claude-surface px-4 py-2 text-[13px] text-claude-muted transition-all hover:bg-claude-surface-2 hover:text-claude-text"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="size-3.5"
+                    {/* Prototype Testing Signifiers */}
+                    <div className="mt-7 flex flex-col items-center justify-center gap-3">
+                      <p className="text-xs font-medium text-claude-muted/70 uppercase tracking-wider select-none">
+                        Try these prompts to test the evaluators
+                      </p>
+                      <div className="flex flex-wrap items-center justify-center gap-2">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setPrompt("Write a python script to scrape a website.");
+                          }}
+                          className="flex items-center gap-2 rounded-full border border-claude-border bg-claude-surface px-4 py-2 text-[13px] text-claude-muted transition-all hover:border-claude-accent/30 hover:bg-claude-surface-2 hover:text-claude-text"
                         >
-                          <path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
-                        </svg>
-                        Write
-                      </button>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-3.5">
+                            <path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16" />
+                          </svg>
+                          Test 'Code' & 'Rigor'
+                        </button>
 
-                      <button
-                        type="button"
-                        onClick={() => setPrompt("Explain ")}
-                        className="flex items-center gap-2 rounded-full border border-claude-border bg-claude-surface px-4 py-2 text-[13px] text-claude-muted transition-all hover:bg-claude-surface-2 hover:text-claude-text"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="size-3.5"
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setPrompt("Draft an email to my investors explaining a recent 10% drop in revenue.");
+                          }}
+                          className="flex items-center gap-2 rounded-full border border-claude-border bg-claude-surface px-4 py-2 text-[13px] text-claude-muted transition-all hover:border-claude-accent/30 hover:bg-claude-surface-2 hover:text-claude-text"
                         >
-                          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
-                          <path d="M6 6h10M6 10h10" />
-                        </svg>
-                        Learn
-                      </button>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-3.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                          </svg>
+                          Test 'Risk' & 'Style'
+                        </button>
 
-                      <button
-                        type="button"
-                        onClick={() => setPrompt("Review this code or write a function to ")}
-                        className="flex items-center gap-2 rounded-full border border-claude-border bg-claude-surface px-4 py-2 text-[13px] text-claude-muted transition-all hover:bg-claude-surface-2 hover:text-claude-text"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="size-3.5"
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setPrompt("Explain the pros and cons of moving from React to Next.js.");
+                          }}
+                          className="flex items-center gap-2 rounded-full border border-claude-border bg-claude-surface px-4 py-2 text-[13px] text-claude-muted transition-all hover:border-claude-accent/30 hover:bg-claude-surface-2 hover:text-claude-text"
                         >
-                          <path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16" />
-                        </svg>
-                        Code
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() => setPrompt("Give me ideas for ")}
-                        className="flex items-center gap-2 rounded-full border border-claude-border bg-claude-surface px-4 py-2 text-[13px] text-claude-muted transition-all hover:bg-claude-surface-2 hover:text-claude-text"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="size-3.5"
-                        >
-                          <path d="M17 8h1a4 4 0 1 1 0 8h-1M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
-                          <path d="M6 2v2M10 2v2M14 2v2" />
-                        </svg>
-                        Life stuff
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() => setPrompt("Recommend a ")}
-                        className="flex items-center gap-2 rounded-full border border-claude-border bg-claude-surface px-4 py-2 text-[13px] text-claude-muted transition-all hover:bg-claude-surface-2 hover:text-claude-text"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="size-3.5"
-                        >
-                          <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5M9 18h6M10 22h4" />
-                        </svg>
-                        Claude's choice
-                      </button>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-3.5">
+                            <path d="M2 12h4l2-9 5 18 2-9h5" />
+                          </svg>
+                          Test 'Balanced'
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
